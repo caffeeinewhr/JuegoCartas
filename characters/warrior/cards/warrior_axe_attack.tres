@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bhsgjlhr8xhye"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_axe_attack.gd" id="1_2y20d"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="1_pgsf7"]
+
+[resource]
+script = ExtResource("1_2y20d")
+id = "warrior_axe_attack"
+type = 0
+target = 1
+cost = 1
+icon = ExtResource("1_pgsf7")
+tooltip_text = "[center]Hace [color=red]6[/color] de daño[/center]"

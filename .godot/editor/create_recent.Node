@@ -1,0 +1,12 @@
+Timer
+ColorRect
+CanvasLayer
+Node2D
+Node
+TextureRect
+Label
+Panel
+CollisionShape2D
+Area2D
+Sprite2D
+HBoxContainer

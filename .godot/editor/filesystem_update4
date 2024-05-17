@@ -1,0 +1,16 @@
+res://scenes/battle/battle.tscn
+res://scenes/card_ui/card_states/card_clicked_state.gd
+res://main_theme.tres
+res://characters/warrior/cards/warrior_axe_attack.tres
+res://characters/warrior/cards/warrior_block.tres
+res://characters/warrior/warrior_starting_deck.tres
+res://enemies/crab/crab_enemy.tres
+res://scenes/card_ui/card_ui.gd
+res://scenes/card_ui/card_ui.tscn
+res://scenes/enemy/enemy.tscn
+res://scenes/card_target_selector/card_target_selector.tscn
+res://scenes/ui/stats_ui.tscn
+res://scenes/enemy/enemy_action_picker.tscn
+res://enemies/crab/crab_enemy_ia.tscn
+res://scenes/card_ui/card_states/card_released_state.gd
+res://custom_resources/card.gd

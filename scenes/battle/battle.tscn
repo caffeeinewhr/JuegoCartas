@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6co1f6ltokpw"]
+
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
+[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_x1rv3"]
+[ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_b4ygg"]
+[ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="2_v1hmm"]
+[ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_en8h8"]
+[ext_resource type="PackedScene" uid="uid://efmvom1i6akt" path="res://scenes/player/player.tscn" id="3_mmqxs"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_s5v0x"]
+[ext_resource type="Resource" uid="uid://ccn8l8md8lt2d" path="res://enemies/crab/crab_enemy.tres" id="5_jh0qk"]
+[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_wlosk"]
+[ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_cdiat"]
+[ext_resource type="PackedScene" uid="uid://c5rs2totlrygb" path="res://scenes/ui/mana_ui.tscn" id="9_oy47p"]
+[ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="10_ocro2"]
+[ext_resource type="PackedScene" uid="uid://ggogqm7l4e71" path="res://scenes/ui/tooltip.tscn" id="12_7xib0"]
+[ext_resource type="Theme" uid="uid://cuvab3qu8ggvx" path="res://main_theme.tres" id="13_flgwy"]
+[ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_7fsp0"]
+[ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="16_4rxwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrmle"]
+size = Vector2(256, 100)
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_v23k3")
+char_stats = ExtResource("10_ocro2")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+texture = ExtResource("1_x1rv3")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(128, 50)
+shape = SubResource("RectangleShape2D_qrmle")
+
+[node name="EnemyHandler" type="Node2D" parent="."]
+script = ExtResource("4_s5v0x")
+
+[node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_v1hmm")]
+collision_layer = 2
+stats = ExtResource("5_jh0qk")
+
+[node name="Player" parent="." instance=ExtResource("3_mmqxs")]
+position = Vector2(40, 73)
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("3_en8h8")]
+
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("8_cdiat")
+hand = NodePath("../BattleUI/Hand")
+
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("7_wlosk")
+
+[node name="Hand" type="HBoxContainer" parent="BattleUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("2_b4ygg")
+
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("9_oy47p")]
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 26.0
+offset_bottom = -6.0
+char_stats = ExtResource("10_ocro2")
+
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("12_7xib0")]
+offset_top = 6.0
+offset_bottom = 42.0
+
+[node name="EndTurnButton" type="Button" parent="BattleUI"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -21.0
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_flgwy")
+text = "End Turn"
+
+[node name="RedFlash" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("15_7fsp0")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.356863, 0.376471, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash"]
+wait_time = 0.1
+one_shot = true
+
+[node name="FinBatallaLayer" type="CanvasLayer" parent="."]
+
+[node name="finBatalla" parent="FinBatallaLayer" instance=ExtResource("16_4rxwp")]
+visible = false

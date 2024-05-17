@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://efmvom1i6akt"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_t2ssr"]
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_xyyey"]
+[ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="2_cnpyn"]
+[ext_resource type="PackedScene" uid="uid://55ctiyn5um2a" path="res://scenes/ui/stats_ui.tscn" id="2_r3evu"]
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_t2ssr")
+stats = ExtResource("2_cnpyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xyyey")
+
+[node name="StatsUI" parent="." instance=ExtResource("2_r3evu")]
+offset_top = 7.0
+offset_bottom = 23.0
