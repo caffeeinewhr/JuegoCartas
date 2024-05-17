@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://55ctiyn5um2a"]
 
 [ext_resource type="Theme" uid="uid://cuvab3qu8ggvx" path="res://main_theme.tres" id="1_f0w8a"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="2_n67wj"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="2_n67wj"]
 [ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="2_wliu7"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/heart.png" id="3_bu1wq"]
+[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/tutorial/heart.png" id="3_bu1wq"]
 
 [node name="StatsUI" type="HBoxContainer"]
 anchors_preset = 5

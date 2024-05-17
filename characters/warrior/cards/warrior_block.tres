@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://byk45wvc2hf4i"]
 
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="1_3frpy"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="1_3frpy"]
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_block.gd" id="2_680uf"]
 
 [resource]

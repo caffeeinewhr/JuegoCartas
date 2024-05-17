@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7r8gs68656vi"]
+
+[ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="1_2did3"]
+[ext_resource type="Script" path="res://scenes/pause_menu/pause_menu.gd" id="1_hvjqk"]
+[ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="3_7bkro"]
+[ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_udhyt"]
+[ext_resource type="AudioStream" uid="uid://ch1qwovae6hdw" path="res://art/sfx/select_006.ogg" id="4_4rfro"]
+[ext_resource type="AudioStream" uid="uid://nqwqx1i2xtjp" path="res://art/sfx/drop_003.ogg" id="4_lpqf3"]
+[ext_resource type="AudioStream" uid="uid://c4ofybv5j3d5a" path="res://art/sfx/glass_006.ogg" id="7_tjem6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qelk"]
+shader = ExtResource("3_udhyt")
+shader_parameter/speed = 0.1
+shader_parameter/distortionAmount = 0.03
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2did3")
+script = ExtResource("1_hvjqk")
+
+[node name="AnimatedBackground" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="AnimatedBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -183.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundSubtle" type="ColorRect" parent="AnimatedBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_right = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1)
+color = Color(0, 0, 0, 0.741176)
+
+[node name="MovingPattern" type="TextureRect" parent="AnimatedBackground"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3qelk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_right = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7bkro")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -138.0
+offset_right = 61.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="MusicButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music: ON"
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="ExitClick" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_4rfro")
+
+[node name="NormalClick" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_lpqf3")
+
+[node name="Hover" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_tjem6")
+volume_db = -7.0
+pitch_scale = 0.8
+
+[connection signal="mouse_entered" from="VBoxContainer/MusicButton" to="." method="_on_music_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

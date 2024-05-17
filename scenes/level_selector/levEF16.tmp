@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bghjs74vebhcm"]
+
+[ext_resource type="Script" path="res://scenes/level_selector/level_selector.gd" id="1_qcvhi"]
+[ext_resource type="PackedScene" uid="uid://dpqmqkkjxn61l" path="res://scenes/level_selector/level.tscn" id="2_aog86"]
+[ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="4_eo1go"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcvhi")
+
+[node name="Level1" parent="." instance=ExtResource("2_aog86")]
+layout_mode = 1
+offset_left = -107.0
+offset_top = 63.0
+offset_right = -107.0
+offset_bottom = 63.0
+
+[node name="Level2" parent="." instance=ExtResource("2_aog86")]
+layout_mode = 1
+offset_left = -88.0
+offset_top = 12.0
+offset_right = -88.0
+offset_bottom = 12.0
+
+[node name="Level3" parent="." instance=ExtResource("2_aog86")]
+layout_mode = 1
+offset_left = -20.0
+offset_top = 49.0
+offset_right = -20.0
+offset_bottom = 49.0
+
+[node name="Level4" parent="." instance=ExtResource("2_aog86")]
+layout_mode = 1
+offset_left = 54.0
+offset_top = 30.0
+offset_right = 54.0
+offset_bottom = 30.0
+
+[node name="Level5" parent="." instance=ExtResource("2_aog86")]
+layout_mode = 1
+offset_left = 16.0
+offset_top = -27.0
+offset_right = 16.0
+offset_bottom = -27.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_eo1go")]
+visible = false
+z_index = 1
+layout_mode = 1

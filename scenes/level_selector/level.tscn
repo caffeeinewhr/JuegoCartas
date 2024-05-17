@@ -1,0 +1,188 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpqmqkkjxn61l"]
+
+[ext_resource type="Script" path="res://scenes/level_selector/level.gd" id="1_52mp4"]
+[ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_4oiyn"]
+[ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="3_p3a3q"]
+[ext_resource type="Texture2D" uid="uid://bhjjbaq75b4nt" path="res://art/backgrounds/waterPattern.webp" id="3_ut6ly"]
+[ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="5_gbpjj"]
+[ext_resource type="AudioStream" uid="uid://c4ofybv5j3d5a" path="res://art/sfx/glass_006.ogg" id="6_nw7cp"]
+[ext_resource type="Script" path="res://scenes/level_selector/Button.gd" id="6_ucsbq"]
+[ext_resource type="AudioStream" uid="uid://6juhwdamjhgb" path="res://art/sfx/click_001.ogg" id="8_ujklm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubvd3"]
+shader = ExtResource("3_4oiyn")
+shader_parameter/speed = 0.05
+shader_parameter/distortionAmount = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsm6e"]
+shader = ExtResource("3_4oiyn")
+shader_parameter/speed = -0.2
+shader_parameter/distortionAmount = 0.2
+
+[node name="Level" type="Control" groups=["levelControls"]]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_p3a3q")
+script = ExtResource("1_52mp4")
+
+[node name="Boss" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_right = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovingPattern1" type="TextureRect" parent="Boss"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ubvd3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -26.0
+offset_right = -21.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.37704, 7.96976)
+texture = ExtResource("3_ut6ly")
+expand_mode = 1
+
+[node name="BossTexture" type="TextureRect" parent="Boss"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -25.0
+offset_right = 4.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_gbpjj")
+expand_mode = 3
+
+[node name="BossLabel" type="Label" parent="Boss"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -3.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 5
+text = "B O S S"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Normal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_right = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovingPattern1" type="TextureRect" parent="Normal"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xsm6e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -20.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ut6ly")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -17.0
+offset_right = 13.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 4
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 6.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_ucsbq")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Hover" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_nw7cp")
+volume_db = -7.0
+pitch_scale = 0.8
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_ujklm")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

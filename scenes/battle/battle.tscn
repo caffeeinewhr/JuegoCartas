@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_x1rv3"]
+[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/tutorial/background.png" id="1_x1rv3"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_b4ygg"]
 [ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="2_v1hmm"]
 [ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_en8h8"]

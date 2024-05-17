@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv7r5iq1whl74"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_ew610"]
+[ext_resource type="Theme" uid="uid://cuvab3qu8ggvx" path="res://main_theme.tres" id="1_sxgv7"]
+[ext_resource type="Theme" uid="uid://y4jmvkcxq7p2" path="res://menu.tres" id="2_47g0q"]
+[ext_resource type="VideoStream" path="res://art/bg/bgred3.ogv" id="3_ko20c"]
+[ext_resource type="AudioStream" uid="uid://c85c8h5luka3r" path="res://art/music/demo_menu.wav" id="5_vg3qk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+theme = ExtResource("1_sxgv7")
+script = ExtResource("1_ew610")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -2
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 848.0
+scale = Vector2(0.200001, 0.178142)
+stream = ExtResource("3_ko20c")
+autoplay = true
+loop = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -36.0
+offset_right = 72.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme = ExtResource("2_47g0q")
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 8
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -136.0
+offset_right = 72.0
+offset_bottom = -124.0
+grow_vertical = 0
+theme = ExtResource("2_47g0q")
+
+[node name="MusicButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 8
+text = "Music: ON"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vg3qk")
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/MusicButton" to="." method="_on_music_button_pressed"]

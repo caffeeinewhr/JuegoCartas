@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://cv7r5iq1whl74"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_ew610"]
+[ext_resource type="Texture2D" uid="uid://bhjjbaq75b4nt" path="res://art/bg/waterPattern.webp" id="4_84flg"]
+[ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/bg/Pattern.jpg" id="4_gmuka"]
+[ext_resource type="PackedScene" uid="uid://djs73cswiv7ne" path="res://scenes/button/button.tscn" id="5_qjpxx"]
+[ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="6_3bv2r"]
+[ext_resource type="AudioStream" uid="uid://croybqarypgmy" path="res://art/sfx/error_001.ogg" id="6_fqcm4"]
+
+[sub_resource type="Theme" id="Theme_lv7rq"]
+default_font = ExtResource("6_3bv2r")
+default_font_size = 8
+
+[sub_resource type="Shader" id="Shader_4tqv4"]
+code = "shader_type canvas_item;
+
+uniform float speed = 0.05;
+uniform float distortionAmount = 0.05;
+
+void vertex() {
+    UV.x -= TIME * speed;
+}
+
+void fragment() {
+    vec2 distorted_uv = vec2(
+        UV.x + sin(UV.y * 2.0 + TIME) * distortionAmount,
+        UV.y + cos(UV.x * 2.0 + TIME) * distortionAmount
+    );
+
+    vec4 texColor = texture(TEXTURE, distorted_uv);
+    float luminance = dot(texColor.rgb, vec3(0.2126, 0.7152, 0.0722));
+    vec3 finalColor = mix(vec3(0.0), vec3(0.5, 0.0, 0.0), luminance);
+
+    COLOR = vec4(finalColor, texColor.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f01q2"]
+shader = SubResource("Shader_4tqv4")
+shader_parameter/speed = 0.05
+shader_parameter/distortionAmount = 0.01
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lv7rq")
+script = ExtResource("1_ew610")
+
+[node name="AnimatedBackground" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovingPattern" type="TextureRect" parent="AnimatedBackground"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_f01q2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_84flg")
+expand_mode = 2
+
+[node name="MovingPattern3" type="TextureRect" parent="AnimatedBackground"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_f01q2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 59.0
+offset_right = -186.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gmuka")
+expand_mode = 1
+
+[node name="BackgroundColor" type="ColorRect" parent="AnimatedBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -138.0
+offset_right = 57.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="ButtonPlay" parent="VBoxContainer" instance=ExtResource("5_qjpxx")]
+layout_mode = 2
+clickStream = ExtResource("6_fqcm4")
+
+[node name="ButtonQuit" parent="VBoxContainer" instance=ExtResource("5_qjpxx")]
+layout_mode = 2

@@ -1,10 +1,12 @@
+res://global
+res://global/transition
+res://scenes/main_menu
 res://scenes/ui
 res://scenes
 res://scenes/enemy
 res://enemies/crab
 res://art
 res://scenes/card_ui
-res://global
 res://scenes/card_target_selector
 res://characters/warrior
 res://characters/warrior/cards
