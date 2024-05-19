@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6co1f6ltokpw"]
+[gd_scene load_steps=19 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/tutorial/background.png" id="1_x1rv3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://cuvab3qu8ggvx" path="res://main_theme.tres" id="13_flgwy"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_7fsp0"]
 [ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="16_4rxwp"]
+[ext_resource type="AudioStream" uid="uid://tcyw4m5xr32x" path="res://art/music/pelea.wav" id="17_3xf2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrmle"]
 size = Vector2(256, 100)
@@ -119,3 +120,9 @@ one_shot = true
 
 [node name="finBatalla" parent="FinBatallaLayer" instance=ExtResource("16_4rxwp")]
 visible = false
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("17_3xf2f")
+autoplay = true

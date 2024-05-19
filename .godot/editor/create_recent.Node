@@ -1,8 +1,9 @@
+AudioStreamPlayer
+Node
 Timer
 ColorRect
 CanvasLayer
 Node2D
-Node
 TextureRect
 Label
 Panel
