@@ -4,7 +4,6 @@ var played: bool
 
 func enter() -> void:
 	played= false
-	print("hola")
 	if not card_ui.targets.is_empty():
 		Events.tooltip_hide_requested.emit()
 		played = true

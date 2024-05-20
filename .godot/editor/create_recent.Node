@@ -1,9 +1,11 @@
+CenterContainer
+TextureRect
+AudioStreamPlayer
+Node
 Timer
 ColorRect
 CanvasLayer
 Node2D
-Node
-TextureRect
 Label
 Panel
 CollisionShape2D
