@@ -7,7 +7,7 @@
 script = ExtResource("1_2y20d")
 id = "warrior_axe_attack"
 type = 0
-target = 1
+target = 2
 cost = 1
 icon = ExtResource("1_pgsf7")
 tooltip_text = "[center]Hace [color=red]6[/color] de daño[/center]"

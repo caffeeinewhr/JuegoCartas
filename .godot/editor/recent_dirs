@@ -1,8 +1,9 @@
 res://scenes/battle
+res://scenes/ui
+res://art/tutorial
+res://scenes/main_menu
 res://global
 res://global/transition
-res://scenes/main_menu
-res://scenes/ui
 res://scenes
 res://scenes/enemy
 res://enemies/crab

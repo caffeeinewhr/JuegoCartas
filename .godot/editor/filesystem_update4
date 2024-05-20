@@ -14,10 +14,12 @@ res://scenes/level_selector/level.tscn
 res://scenes/level_selector/level_selector.tscn
 res://scenes/main_menu/main_menu.tscn
 res://scenes/pause_menu/pause_menu.tscn
-res://scenes/player/player.tscn
-res://scenes/ui/accion_ui.tscn
-res://scenes/ui/finBatalla.tscn
-res://scenes/ui/mana_ui.tscn
-res://scenes/ui/tooltip.tscn
 res://scenes/battle/battle.tscn
+res://custom_resources/card.gd
+res://scenes/card_ui/card_states/card_released_state.gd
+res://scenes/level_selector/level_selector.gd
+res://scenes/level_selector/level.gd
 res://scenes/level_selector/Button.gd
+res://scenes/ui/finBatalla.tscn
+res://scenes/ui/card_menu_ui.tscn
+res://scenes/ui/card_menu_ui.gd
