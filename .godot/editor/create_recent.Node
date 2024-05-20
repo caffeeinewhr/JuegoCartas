@@ -1,10 +1,10 @@
+CanvasLayer
+AudioStreamPlayer
 CenterContainer
 TextureRect
-AudioStreamPlayer
 Node
 Timer
 ColorRect
-CanvasLayer
 Node2D
 Label
 Panel

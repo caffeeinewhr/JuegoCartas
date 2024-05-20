@@ -20,3 +20,7 @@ res://scenes/ui/finBatalla.tscn
 res://scenes/ui/mana_ui.tscn
 res://scenes/ui/tooltip.tscn
 res://scenes/battle/battle.tscn
+res://scenes/battle/battle.gd
+res://finBatalla.gdshader
+res://shaders/bgMenuScroll.gdshader
+res://shaders/finBatalla.gdshader
