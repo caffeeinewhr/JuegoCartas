@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="DeckBuilder"
+config/name="SleepyRush"
+config/description="Juego de cartas donde un gatete está mimiendo :)"
 run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
