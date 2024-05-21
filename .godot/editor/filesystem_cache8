@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716279038
+::res://::1716279718
 icon.png::CompressedTexture2D::8609809032807857035::1715765631::1715969257::1::::<><>::
-main_theme.tres::Theme::6219973455099735737::1716235661::0::1::::<><>::uid://6rij1r6cdara::::res://scenes/card_ui/card_hover_stylebox.tres<>uid://bfq63s7mv7mvu::::res://scenes/card_ui/card_base_stylebox.tres<>uid://bry4o84o2dnsy::::res://scenes/ui/tooltip.tres
+main_theme.tres::Theme::6219973455099735737::1716279281::0::1::::<><>::uid://6rij1r6cdara::::res://scenes/card_ui/card_hover_stylebox.tres<>uid://bfq63s7mv7mvu::::res://scenes/card_ui/card_base_stylebox.tres<>uid://bry4o84o2dnsy::::res://scenes/ui/tooltip.tres
 README.md::TextFile::-1::1713369405::0::1::::<><>::
 ::res://addons/::1715770390
 ::res://addons/godot-sqlite/::1715770391
@@ -9,7 +9,7 @@ gdsqlite.gdextension::GDExtension::-1::1715770391::0::1::::<><>::
 godot-sqlite.gd::GDScript::-1::1715770391::0::1::::<>EditorPlugin<>::
 LICENSE.md::TextFile::-1::1715770390::0::1::::<><>::
 plugin.cfg::TextFile::-1::1715770391::0::1::::<><>::
-::res://addons/godot-sqlite/bin/::1716279030
+::res://addons/godot-sqlite/bin/::1716279710
 ::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/::1715770391
 ::res://addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/::1715770391
 ::res://art/::1715970390
@@ -135,9 +135,9 @@ toggle_002.ogg::AudioStreamOggVorbis::4307396868017463805::1713983666::171597014
 toggle_003.ogg::AudioStreamOggVorbis::3729432137683256729::1713983666::1715970144::1::::<><>::
 toggle_004.ogg::AudioStreamOggVorbis::8019163696546577378::1713983666::1715970144::1::::<><>::
 ::res://art/themes/::1715717363
-::res://art/themes/MinimalUI/::1716238799
+::res://art/themes/MinimalUI/::1716279282
 icons.svg::CompressedTexture2D::5136250278517083087::1715357050::1716235657::1::::<><>::
-MinimalUI.tres::Theme::4596472054822834011::1716238799::0::1::::<><>::uid://ddm3m57t31rfs::::res://art/fonts/JMH Typewriter.otf<>uid://cfgbj6f4jxm8v::::res://art/themes/MinimalUI/icons.svg
+MinimalUI.tres::Theme::4596472054822834011::1716279282::0::1::::<><>::uid://ddm3m57t31rfs::::res://art/fonts/JMH Typewriter.otf<>uid://cfgbj6f4jxm8v::::res://art/themes/MinimalUI/icons.svg
 ::res://art/tutorial/::1716239977
 8_bit_iced_village_lofi.mp3::AudioStreamMP3::8218554787359265850::1713983646::1715970143::1::::<><>::
 arrow.png::CompressedTexture2D::2515448857286657013::1713983646::1715970144::1::::<><>::
@@ -198,14 +198,14 @@ tile_0129.png::CompressedTexture2D::418169446071867658::1713983646::1715970144::
 tile_0130.png::CompressedTexture2D::1065825416637778134::1713983646::1715970144::1::::<><>::
 tile_0131.png::CompressedTexture2D::6611441545928764225::1713983646::1715970144::1::::<><>::
 ::res://characters/::1713466132
-::res://characters/warrior/::1716235662
+::res://characters/warrior/::1716279282
 warrior.tres::Resource/Resource::1185385429297408955::1715964395::0::1::::<><>::uid://cwf6dyi56tgo::::res://art/tile_0088.png<>res://custom_resources/character_stats.gd<>uid://b3mfldpfyt4x3::::res://characters/warrior/warrior_starting_deck.tres
-warrior_starting_deck.tres::Resource/CardPile::4376804248305658262::1716235662::0::1::::<><>::uid://bhsgjlhr8xhye::::res://characters/warrior/cards/warrior_axe_attack.tres<>res://custom_resources/card_pile.gd<>uid://byk45wvc2hf4i::::res://characters/warrior/cards/warrior_block.tres
-::res://characters/warrior/cards/::1716235662
+warrior_starting_deck.tres::Resource/CardPile::4376804248305658262::1716279282::0::1::::<><>::uid://bhsgjlhr8xhye::::res://characters/warrior/cards/warrior_axe_attack.tres<>res://custom_resources/card_pile.gd<>uid://byk45wvc2hf4i::::res://characters/warrior/cards/warrior_block.tres
+::res://characters/warrior/cards/::1716279282
 warrior_axe_attack.gd::GDScript::-1::1715969606::0::1::::<>Card<>::
-warrior_axe_attack.tres::Resource::2915282352222043256::1716235661::0::1::::<><>::res://characters/warrior/cards/warrior_axe_attack.gd<>uid://cqcal03735mv8::::res://art/tutorial/tile_0118.png
+warrior_axe_attack.tres::Resource::2915282352222043256::1716279282::0::1::::<><>::res://characters/warrior/cards/warrior_axe_attack.gd<>uid://cqcal03735mv8::::res://art/tutorial/tile_0118.png
 warrior_block.gd::GDScript::-1::1715106713::0::1::::<>Card<>::
-warrior_block.tres::Resource::4093412263235680094::1716235662::0::1::::<><>::uid://oe7v35ii8vrs::::res://art/tutorial/tile_0102.png<>res://characters/warrior/cards/warrior_block.gd
+warrior_block.tres::Resource::4093412263235680094::1716279282::0::1::::<><>::uid://oe7v35ii8vrs::::res://art/tutorial/tile_0102.png<>res://characters/warrior/cards/warrior_block.gd
 ::res://custom_resources/::1715969949
 accionEnemiga.gd::GDScript::-1::1715636393::0::1::::AccionEnemiga<>Resource<>::
 card.gd::GDScript::-1::1715969603::0::1::::Card<>Resource<>::
@@ -218,16 +218,18 @@ stats.gd::GDScript::-1::1715969606::0::1::::Stats<>Resource<>::
 block_effect.gd::GDScript::-1::1715969603::0::1::::BlockEffect<>Effect<>::
 damage_effect.gd::GDScript::-1::1715969604::0::1::::DamageEffect<>Effect<>::
 ::res://enemies/::1715281049
-::res://enemies/crab/::1716237932
+::res://enemies/crab/::1716279282
 crab_attack_action.gd::GDScript::-1::1715969604::0::1::::<>EnemyAction<>::
 crab_block_action.gd::GDScript::-1::1715969604::0::1::::<>EnemyAction<>::
-crab_enemy.tres::Resource/EnemyStats::4942081021948359469::1716237932::0::1::::<><>::uid://ukld5o613i0a::::res://art/tutorial/tile_0122.png<>res://custom_resources/enemy_stats.gd<>uid://bkglcbo4dkx0g::::res://enemies/crab/crab_enemy_ia.tscn
+crab_enemy.tres::Resource/EnemyStats::4942081021948359469::1716279282::0::1::::<><>::uid://ukld5o613i0a::::res://art/tutorial/tile_0122.png<>res://custom_resources/enemy_stats.gd<>uid://bkglcbo4dkx0g::::res://enemies/crab/crab_enemy_ia.tscn
 crab_enemy_ia.tscn::PackedScene::3101366920578693204::1715970348::0::1::::<><>::res://scenes/enemy/enemy_action_picker.gd<>res://enemies/crab/crab_attack_action.gd<>uid://bfvi02kojsa00::::res://art/tutorial/tile_0103.png<>res://enemies/crab/crab_block_action.gd<>res://custom_resources/accionEnemiga.gd<>res://enemies/crab/crab_megablock_action.gd<>uid://oe7v35ii8vrs::::res://art/tutorial/tile_0102.png
 crab_megablock_action.gd::GDScript::-1::1715969604::0::1::::<>EnemyAction<>::
-::res://global/::1715969967
-customAudioSettings.gd::GDScript::-1::1715969967::0::1::::<>AudioStreamPlayer<>::
+::res://global/::1716279684
 events.gd::GDScript::-1::1715969605::0::1::::<>Node<>::
 shaker.gd::GDScript::-1::1715969605::0::1::::<>Node<>::
+::res://global/audio_player/::1716279684
+audio_player.gd::GDScript::-1::1716279589::0::1::::<>AudioStreamPlayer<>::
+audio_player.tscn::PackedScene::3326966515734200225::1716279589::0::1::::<><>::res://global/audio_player/audio_player.gd
 ::res://global/sqlite/::1715940051
 data_connection.gd::GDScript::-1::1715940051::0::1::::<>Node2D<>::
 ::res://global/transition/::1716240719
@@ -248,10 +250,10 @@ card_hover_stylebox.tres::StyleBoxFlat::2211451775965363994::1715106713::0::1:::
 card_state_machine.gd::GDScript::-1::1715969604::0::1::::CardStateMachine<>Node<>::
 card_ui.gd::GDScript::-1::1715969604::0::1::::CardUI<>Control<>::
 card_ui.tscn::PackedScene::2136811164225749801::1716240719::0::1::::<><>::uid://cuvab3qu8ggvx::::res://main_theme.tres<>res://scenes/card_ui/card_ui.gd<>uid://blytywcndm37v::::res://scenes/card_ui/card_dragging_stylebox.tres<>res://scenes/card_ui/card_state_machine.gd<>res://scenes/card_ui/card_states/card_base_state.gd<>res://scenes/card_ui/card_states/card_clicked_state.gd<>res://scenes/card_ui/card_states/card_dragging_state.gd<>res://scenes/card_ui/card_states/card_released_state.gd<>res://scenes/card_ui/card_states/card_aiming_state.gd
-::res://scenes/card_ui/card_states/::1716235661
+::res://scenes/card_ui/card_states/::1716279282
 card_aiming_state.gd::GDScript::-1::1715969603::0::1::::<>CardState<>::
 card_base_state.gd::GDScript::-1::1715969603::0::1::::<>CardState<>::
-card_clicked_state.gd::GDScript::-1::1716235661::0::1::::<>CardState<>::
+card_clicked_state.gd::GDScript::-1::1716279281::0::1::::<>CardState<>::
 card_dragging_state.gd::GDScript::-1::1715969603::0::1::::<>CardState<>::
 card_released_state.gd::GDScript::-1::1716235612::0::1::::<>CardState<>::
 card_state.gd::GDScript::-1::1715969604::0::1::::CardState<>Node<>::
@@ -271,9 +273,9 @@ level_selector.tscn::PackedScene::2822584713530969492::1716240719::0::1::::<><>:
 ::res://scenes/main_menu/::1716240720
 main_menu.gd::GDScript::-1::1715969605::0::1::::<>Control<>::
 main_menu.tscn::PackedScene::6313953380723652961::1716240720::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://b6qthuai1qntb::::res://art/themes/MinimalUI/MinimalUI.tres<>uid://bhjjbaq75b4nt::::res://art/backgrounds/waterPattern.webp<>uid://dd2ia5vm4bk2h::::res://art/backgrounds/Pattern.jpg<>uid://bd0jskfcuvdwo::::res://art/backgrounds/cat2.png<>uid://ddm3m57t31rfs::::res://art/fonts/JMH Typewriter.otf<>uid://c85c8h5luka3r::::res://art/music/demo_menu.wav<>uid://ch1qwovae6hdw::::res://art/sfx/select_006.ogg<>uid://6juhwdamjhgb::::res://art/sfx/click_001.ogg<>uid://c4ofybv5j3d5a::::res://art/sfx/glass_006.ogg
-::res://scenes/pause_menu/::1716240720
-pause_menu.gd::GDScript::-1::1715970069::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::7055994155998227854::1716240720::0::1::::<><>::uid://b6qthuai1qntb::::res://art/themes/MinimalUI/MinimalUI.tres<>res://scenes/pause_menu/pause_menu.gd<>uid://dd2ia5vm4bk2h::::res://art/backgrounds/Pattern.jpg<>res://shaders/bgMenuScroll.gdshader<>uid://ch1qwovae6hdw::::res://art/sfx/select_006.ogg<>uid://nqwqx1i2xtjp::::res://art/sfx/drop_003.ogg<>uid://c4ofybv5j3d5a::::res://art/sfx/glass_006.ogg
+::res://scenes/pause_menu/::1716279282
+pause_menu.gd::GDScript::-1::1716279282::0::1::::<>Control<>::
+pause_menu.tscn::PackedScene::7055994155998227854::1716279281::0::1::::<><>::uid://b6qthuai1qntb::::res://art/themes/MinimalUI/MinimalUI.tres<>res://scenes/pause_menu/pause_menu.gd<>uid://dd2ia5vm4bk2h::::res://art/backgrounds/Pattern.jpg<>res://shaders/bgMenuScroll.gdshader<>uid://ch1qwovae6hdw::::res://art/sfx/select_006.ogg<>uid://nqwqx1i2xtjp::::res://art/sfx/drop_003.ogg<>uid://c4ofybv5j3d5a::::res://art/sfx/glass_006.ogg
 ::res://scenes/player/::1716240720
 player.gd::GDScript::-1::1715969605::0::1::::Player<>Node2D<>::
 player.tscn::PackedScene::291844123965414303::1716240720::0::1::::<><>::res://scenes/player/player.gd<>uid://dpfqok8tuy4r7::::res://art/tutorial/tile_0084.png<>uid://q5heikpti188::::res://characters/warrior/warrior.tres<>uid://55ctiyn5um2a::::res://scenes/ui/stats_ui.tscn
@@ -296,10 +298,10 @@ stats_ui.tscn::PackedScene::2167752463726149350::1715970518::0::1::::<><>::uid:/
 tooltip.gd::GDScript::-1::1715636393::0::1::::Tooltip<>PanelContainer<>::
 tooltip.tres::StyleBoxFlat::3630963664284175608::1715636393::0::1::::<><>::
 tooltip.tscn::PackedScene::434380941395746946::1716240720::0::1::::<><>::uid://b6qthuai1qntb::::res://art/themes/MinimalUI/MinimalUI.tres<>res://scenes/ui/tooltip.gd<>uid://c6rme2o6dyaoj::::res://art/tutorial/tile_0104.png
-::res://shaders/::1716242064
-batallaShader1.gdshader::Shader::-1::1716242064::0::1::::<><>::
-bgMenuScroll.gdshader::Shader::-1::1716242064::0::1::::<><>::
-finBatalla.gdshader::Shader::-1::1716242064::0::1::::<><>::
+::res://shaders/::1716279705
+batallaShader1.gdshader::Shader::-1::1716279705::0::1::::<><>::
+bgMenuScroll.gdshader::Shader::-1::1716279705::0::1::::<><>::
+finBatalla.gdshader::Shader::-1::1716279705::0::1::::<><>::
 vignette.gdshader::Shader::-1::1715967306::0::1::::<><>::
 ::res://web/::1715969257
 index.apple-touch-icon.png::CompressedTexture2D::131731233574466968::1715881887::1715969257::1::::<><>::

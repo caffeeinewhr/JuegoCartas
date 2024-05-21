@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c6co1f6ltokpw"]
+[gd_scene load_steps=23 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/tutorial/background.png" id="1_x1rv3"]
@@ -18,7 +18,6 @@
 [ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="14_k70s8"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_7fsp0"]
 [ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="16_4rxwp"]
-[ext_resource type="AudioStream" uid="uid://tcyw4m5xr32x" path="res://art/music/pelea.wav" id="17_3xf2f"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="18_0vwuu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5vyt"]
@@ -159,9 +158,3 @@ visible = false
 
 [node name="PauseMenu" parent="PauseLayer" instance=ExtResource("18_0vwuu")]
 visible = false
-
-[node name="Audio" type="Node" parent="."]
-
-[node name="Music" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("17_3xf2f")
-autoplay = true

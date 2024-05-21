@@ -13,22 +13,21 @@ func pauseMenu():
 	isPaused = !isPaused
 	if isPaused:
 		$".".show()
-		AudioSettings.volume = -5.0
+		AudioPlayer.change_volume(-7.0)
 		get_tree().paused = true
 	else:
 		$".".hide()
-		AudioSettings.volume = 0.0
+		AudioPlayer.change_volume(0.0)
 		get_tree().paused = false
 
 
 func _on_music_button_pressed():
 	$Audio/NormalClick.play()
-	if AudioSettings.isVolumeUp:
-		$VBoxContainer/MusicButton.set_text("Music: ON") 
-		AudioSettings.isVolumeUp = true
-	else:
+	if AudioPlayer.isMusicEnabled:
 		$VBoxContainer/MusicButton.set_text("Music: OFF") 
-		AudioSettings.isVolumeUp = false
+	else:
+		$VBoxContainer/MusicButton.set_text("Music: ON") 		
+	AudioPlayer.change_play()
 	
 	
 func _on_resume_button_pressed():

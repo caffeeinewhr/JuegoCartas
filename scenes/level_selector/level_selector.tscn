@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bghjs74vebhcm"]
+[gd_scene load_steps=10 format=3 uid="uid://bghjs74vebhcm"]
 
 [ext_resource type="Script" path="res://scenes/level_selector/level_selector.gd" id="1_qcvhi"]
 [ext_resource type="Texture2D" uid="uid://bhjjbaq75b4nt" path="res://art/backgrounds/waterPattern.webp" id="2_afl8q"]
 [ext_resource type="PackedScene" uid="uid://dpqmqkkjxn61l" path="res://scenes/level_selector/level.tscn" id="2_aog86"]
 [ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="3_2rgxm"]
-[ext_resource type="AudioStream" uid="uid://byrllmon6v4vs" path="res://art/music/mapa.wav" id="4_8f5kb"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="4_eo1go"]
 [ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="4_v7ib8"]
 [ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="5_rrqda"]
@@ -202,9 +201,3 @@ isBossBattle = true
 visible = false
 z_index = 1
 layout_mode = 1
-
-[node name="Audio" type="Node" parent="."]
-
-[node name="Music" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("4_8f5kb")
-autoplay = true

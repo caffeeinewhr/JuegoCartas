@@ -10,6 +10,7 @@ extends Node2D
 func _ready() -> void:
 	#Esta parte se hará en las nuevas runs, porque se mantienen
 	#las estadisticas entre niveles
+	AudioPlayer.play_music(preload("res://art/music/pelea.wav"))
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats

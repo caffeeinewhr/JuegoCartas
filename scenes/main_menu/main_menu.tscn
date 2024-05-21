@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv7r5iq1whl74"]
+[gd_scene load_steps=12 format=3 uid="uid://cv7r5iq1whl74"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_ew610"]
 [ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="1_x40pg"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_gmuka"]
 [ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="5_6hu1k"]
 [ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="6_3bv2r"]
-[ext_resource type="AudioStream" uid="uid://c85c8h5luka3r" path="res://art/music/demo_menu.wav" id="7_abs3l"]
 [ext_resource type="AudioStream" uid="uid://ch1qwovae6hdw" path="res://art/sfx/select_006.ogg" id="8_y4qr8"]
 [ext_resource type="AudioStream" uid="uid://6juhwdamjhgb" path="res://art/sfx/click_001.ogg" id="9_mbi5e"]
 [ext_resource type="AudioStream" uid="uid://c4ofybv5j3d5a" path="res://art/sfx/glass_006.ogg" id="10_ies6f"]
@@ -149,10 +148,6 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Audio" type="Node" parent="."]
-
-[node name="Music" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("7_abs3l")
-autoplay = true
 
 [node name="ExitClick" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("8_y4qr8")

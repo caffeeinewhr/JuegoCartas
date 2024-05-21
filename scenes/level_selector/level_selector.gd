@@ -5,6 +5,7 @@ extends Control
 @export var lineWidth: int = 2
 		
 func _ready():
+	AudioPlayer.play_music(preload("res://art/music/mapa.wav"))
 	setupLevels()
 
 func setupLevels():
