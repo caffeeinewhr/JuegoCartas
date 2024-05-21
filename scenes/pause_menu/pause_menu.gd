@@ -25,10 +25,10 @@ func _on_music_button_pressed():
 	$Audio/NormalClick.play()
 	if AudioSettings.isVolumeUp:
 		$VBoxContainer/MusicButton.set_text("Music: ON") 
-		AudioSettings.isVolumeUp = false
+		AudioSettings.isVolumeUp = true
 	else:
 		$VBoxContainer/MusicButton.set_text("Music: OFF") 
-		AudioSettings.isVolumeUp = true
+		AudioSettings.isVolumeUp = false
 	
 	
 func _on_resume_button_pressed():

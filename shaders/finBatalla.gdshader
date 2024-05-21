@@ -1,12 +1,12 @@
 shader_type canvas_item;
 
 uniform vec2 resolution = vec2(600.0, 400.0);
-uniform vec3 spiral_color: source_color = vec3(0.6, 0.0, 0.2);
-uniform float frequency: hint_range(1.0, 10.0, 0.1) = 1.0;
-uniform float speed: hint_range(1.0, 20.0, 0.1) = 5.0;
-uniform float brightness: hint_range(1.0, 10.0, 0.1) = 0.5;
-uniform float balance: hint_range(0.0, 1.0, 0.01) = 10.0;
-uniform float octaves: hint_range(1.0, 10.0, 1.0) = 10.0;
+uniform vec3 spiral_color: source_color = vec3(0.2, 0.6, 0.3);
+uniform float frequency: hint_range(1.0, 10.0, 0.1) = 8.0;
+uniform float speed: hint_range(1.0, 20.0, 0.1) = 8.0;
+uniform float brightness: hint_range(1.0, 10.0, 0.1) = 5.0;
+uniform float balance: hint_range(0.0, 1.0, 0.01) = 0.5;
+uniform float octaves: hint_range(1.0, 10.0, 1.0) = 4.0;
 
 float draw_spiral(vec2 uv, float rotation) {
 	float uv_radius = length(uv);
