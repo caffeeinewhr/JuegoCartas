@@ -19,3 +19,8 @@ res://scenes/battle/battle.gd
 res://scenes/battle/timer.tscn
 res://scenes/battle/timer.gd
 res://scenes/ui/mana_ui.tscn
+res://scenes/level_selector/level_selector.tscn
+res://scenes/card_ui/card_ui.tscn
+res://scenes/card_ui/card_base_stylebox.tres
+res://scenes/card_ui/card_dragging_stylebox.tres
+res://scenes/card_ui/card_hover_stylebox.tres

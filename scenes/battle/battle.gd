@@ -10,7 +10,7 @@ extends Node2D
 var isTimerStarted: bool = false
 
 func _ready() -> void:
-	AudioPlayer.play_music(preload("res://art/music/pelea.wav"))
+	AudioPlayer.play_music(preload("res://art/music/pelea.wav"), -3.0)
 	await get_tree().create_timer(2.6).timeout
 	$Timer.start()
 	isTimerStarted = true
