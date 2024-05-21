@@ -7,10 +7,14 @@ extends Node2D
 @onready var enemy_handler: EnemyHandler = $EnemyHandler as EnemyHandler
 @onready var player: Player = $Player as Player
 
+var isTimerStarted: bool = false
+
 func _ready() -> void:
-	#Esta parte se hará en las nuevas runs, porque se mantienen
-	#las estadisticas entre niveles
 	AudioPlayer.play_music(preload("res://art/music/pelea.wav"))
+	await get_tree().create_timer(2.6).timeout
+	$Timer.start()
+	isTimerStarted = true
+	#Esta parte se hará en las nuevas runs, porque se mantienen las estadisticas entre niveles
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
@@ -23,6 +27,10 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 
 	start_battle(new_stats)
+
+func _process(delta):
+	if (isTimerStarted):
+		$BattleUI/Timer.label.text = str(int($Timer.time_left))
 	
 func start_battle(stats: CharacterStats) -> void:
 	enemy_handler.reset_enemy_actions()
@@ -37,4 +45,8 @@ func _on_enemy_turn_ended() -> void:
 	enemy_handler.reset_enemy_actions()
 	
 func _on_player_died() -> void:
-	Events.fin_batalla_request.emit("Derrota",FinBatalla.Type.LOSE)
+	Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
+
+#func _on_timer_timeout():
+	#if enemyNotDead:
+		#Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)

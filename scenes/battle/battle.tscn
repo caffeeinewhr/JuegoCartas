@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c6co1f6ltokpw"]
+[gd_scene load_steps=22 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_b4ygg"]
@@ -14,14 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://c5rs2totlrygb" path="res://scenes/ui/mana_ui.tscn" id="9_oy47p"]
 [ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="10_ocro2"]
 [ext_resource type="PackedScene" uid="uid://ggogqm7l4e71" path="res://scenes/ui/tooltip.tscn" id="12_7xib0"]
+[ext_resource type="PackedScene" uid="uid://bq66dpoe1yij" path="res://scenes/battle/timer.tscn" id="12_pni25"]
 [ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="14_k70s8"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_7fsp0"]
 [ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="16_4rxwp"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="18_0vwuu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2sggn"]
+resource_local_to_scene = true
 shader = ExtResource("3_wbjuw")
-shader_parameter/speed = 3.0
+shader_parameter/speed = 1.0
 shader_parameter/distortionAmount = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrmle"]
@@ -62,8 +64,18 @@ position = Vector2(40, 73)
 script = ExtResource("8_cdiat")
 hand = NodePath("../BattleUI/Hand")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("7_wlosk")
+
+[node name="Timer" parent="BattleUI" instance=ExtResource("12_pni25")]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 22.0
+offset_bottom = 22.0
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7
@@ -133,3 +145,5 @@ visible = false
 
 [node name="PauseMenu" parent="PauseLayer" instance=ExtResource("18_0vwuu")]
 visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

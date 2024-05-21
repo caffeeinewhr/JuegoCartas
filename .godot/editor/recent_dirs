@@ -1,8 +1,9 @@
+res://scenes/battle
+res://scenes/pause_menu
 res://global/audio_player
 res://shaders
 res://
 res://scenes/main_menu
-res://scenes/battle
 res://scenes/ui
 res://art/tutorial
 res://global

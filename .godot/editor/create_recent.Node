@@ -1,13 +1,13 @@
+Panel
+Timer
 ColorRect
 CanvasLayer
 AudioStreamPlayer
 CenterContainer
 TextureRect
 Node
-Timer
 Node2D
 Label
-Panel
 CollisionShape2D
 Area2D
 Sprite2D
