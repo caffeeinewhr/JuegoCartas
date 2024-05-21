@@ -9,3 +9,8 @@ res://scenes/pause_menu/pause_menu.gd
 res://scenes/main_menu/main_menu.tscn
 res://global/audio_player/audio_player.tscn
 res://global/audio_player/audio_player.gd
+res://scenes/battle/battle.tscn
+res://characters/warrior/cards/warrior_axe_attack.tres
+res://characters/warrior/cards/warrior_block.tres
+res://characters/warrior/warrior_starting_deck.tres
+res://enemies/crab/crab_enemy.tres

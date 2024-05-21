@@ -14,7 +14,7 @@ void fragment() {
     );
 
     vec4 texColor = texture(TEXTURE, distorted_uv);
-    float luminance = dot(texColor.rgb, vec3(0.5, 0.5, 0.01));
+    float luminance = dot(texColor.rgb, vec3(0.08, 0.2, 0.01));
     vec3 finalColor = mix(vec3(0.0), vec3(0.8, 0.0, 0.2), luminance);
 
     COLOR = vec4(finalColor, texColor.a);

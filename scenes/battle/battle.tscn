@@ -1,14 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://c6co1f6ltokpw"]
+[gd_scene load_steps=21 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/tutorial/background.png" id="1_x1rv3"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_b4ygg"]
 [ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="2_v1hmm"]
 [ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_en8h8"]
-[ext_resource type="Shader" path="res://shaders/finBatalla.gdshader" id="3_fgb83"]
 [ext_resource type="PackedScene" uid="uid://efmvom1i6akt" path="res://scenes/player/player.tscn" id="3_mmqxs"]
-[ext_resource type="Shader" path="res://shaders/batallaShader1.gdshader" id="3_v7yad"]
+[ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_wbjuw"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_s5v0x"]
+[ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_tf8y8"]
 [ext_resource type="Resource" uid="uid://ccn8l8md8lt2d" path="res://enemies/crab/crab_enemy.tres" id="5_jh0qk"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_wlosk"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_cdiat"]
@@ -20,29 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="16_4rxwp"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="18_0vwuu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5vyt"]
-shader = ExtResource("3_fgb83")
-shader_parameter/resolution = Vector2(600, 400)
-shader_parameter/spiral_color = Color(0.0666667, 0, 0, 1)
-shader_parameter/frequency = 10.0
-shader_parameter/speed = 2.0
-shader_parameter/brightness = 1.0
-shader_parameter/balance = 0.5
-shader_parameter/octaves = 4.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2sggn"]
-shader = ExtResource("3_v7yad")
-shader_parameter/screen_height = 640.0
-shader_parameter/amplitude = 0.075
-shader_parameter/frequency = 20.0
-shader_parameter/speed = 8.0
-shader_parameter/amplitude_vertical = 0.0
-shader_parameter/frequency_vertical = 0.0
-shader_parameter/speed_vertical = 0.0
-shader_parameter/scroll_direction = Vector2(0, 0)
-shader_parameter/scrolling_speed = 0.08
-shader_parameter/enable_palette_cycling = false
-shader_parameter/palette_speed = 0.1
+shader = ExtResource("3_wbjuw")
+shader_parameter/speed = 3.0
+shader_parameter/distortionAmount = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrmle"]
 size = Vector2(256, 100)
@@ -52,17 +32,12 @@ script = ExtResource("1_v23k3")
 char_stats = ExtResource("10_ocro2")
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_m5vyt")
-offset_right = 256.0
-offset_bottom = 144.0
-
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_2sggn")
-texture = ExtResource("1_x1rv3")
+scale = Vector2(0.568889, 0.345324)
+texture = ExtResource("4_tf8y8")
 centered = false
-metadata/_edit_lock_ = true
+flip_h = true
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
