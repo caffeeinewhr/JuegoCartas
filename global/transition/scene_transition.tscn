@@ -65,6 +65,7 @@ _data = {
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_yp4jd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
