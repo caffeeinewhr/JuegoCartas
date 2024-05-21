@@ -1,7 +1,7 @@
-res://scenes/battle
-res://scenes/ui
-res://art/tutorial
 res://scenes/main_menu
+res://scenes/ui
+res://scenes/battle
+res://art/tutorial
 res://global
 res://global/transition
 res://scenes
