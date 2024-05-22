@@ -65,7 +65,7 @@ script = ExtResource("8_cdiat")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 40.0
+wait_time = 5.0
 one_shot = true
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]

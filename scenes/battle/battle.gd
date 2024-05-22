@@ -47,6 +47,6 @@ func _on_enemy_turn_ended() -> void:
 func _on_player_died() -> void:
 	Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
 
-#func _on_timer_timeout():
-	#if enemyNotDead:
-		#Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
+func _on_timer_timeout():
+	if (isTimerStarted == true):
+		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
