@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cy2st0b2ghg1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s848q"]
+bg_color = Color(0.662745, 0.0196078, 0, 0.854902)
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_s848q")
