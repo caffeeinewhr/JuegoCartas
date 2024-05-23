@@ -6,6 +6,12 @@ extends CanvasLayer
 @onready var hand: Hand = $Hand as Hand
 @onready var mana_ui: ManaUI = $ManaUI as ManaUI
 @onready var end_turn_button: Button = $EndTurnButton
+@onready var draw_pile_button: CardPileOpener  = %DrawPileButton
+@onready var discard_button: CardPileOpener = %DiscardButton
+@onready var draw_pile: CardPileView = %DrawPile
+@onready var discard_pile: CardPileView = %DiscardPile
+
+
 
 func _ready()-> void:
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)

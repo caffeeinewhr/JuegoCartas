@@ -15,4 +15,39 @@ func _ready() -> void:
 	
 	for card: Node in cards.get_children():
 		card.queue_free()
+	
+	card_tooltip_popup.hide_tooltip()
+	
+	card_pile = preload("res://characters/warrior/warrior_starting_deck.tres")
+	show_current_views("Deck", true)
+
+func _input(event: InputEvent)-> void:
+	#si presionamos escape, vemos si el popup es visible, y si lo es lo cerramos
+	if event.is_action_pressed("ui_cancel"):
+		if card_tooltip_popup.visible:
+			card_tooltip_popup.hide_tooltip()
+		else:
+			hide()
 		
+func show_current_views(new_title: String, randomized: bool = false) -> void:
+	for card: Node in cards.get_children():
+		card.queue_free()
+		
+	card_tooltip_popup.hide_tooltip()
+	title.text = new_title
+	_update_view.call_deferred(randomized)
+
+func _update_view(randomized: bool) -> void:
+	if not card_pile:
+		return
+	
+	var all_cards := card_pile.cards.duplicate()
+	if randomized:
+		all_cards.shuffle()
+	
+	for card: Card in all_cards:
+		var new_card := CARD_MENU_UI_SCENE.instantiate() as CardMenuUI
+		cards.add_child(new_card)
+		new_card.card = card
+		new_card.tooltip_requested.connect(card_tooltip_popup.show_tooltip)
+	show()
