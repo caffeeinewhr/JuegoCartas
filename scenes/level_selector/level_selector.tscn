@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bghjs74vebhcm"]
+[gd_scene load_steps=10 format=3 uid="uid://bghjs74vebhcm"]
 
 [ext_resource type="Script" path="res://scenes/level_selector/level_selector.gd" id="1_qcvhi"]
 [ext_resource type="Texture2D" uid="uid://bhjjbaq75b4nt" path="res://art/backgrounds/waterPattern.webp" id="2_afl8q"]
 [ext_resource type="PackedScene" uid="uid://dpqmqkkjxn61l" path="res://scenes/level_selector/level.tscn" id="2_aog86"]
 [ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="3_2rgxm"]
-[ext_resource type="AudioStream" uid="uid://byrllmon6v4vs" path="res://art/music/mapa.wav" id="4_8f5kb"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="4_eo1go"]
 [ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="4_v7ib8"]
 [ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="5_rrqda"]
@@ -47,16 +46,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qcvhi")
 
-[node name="AnimatedBackground" type="Control" parent="."]
-z_index = -2
-layout_mode = 1
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+
+[node name="AnimatedBackground" type="Control" parent="BackgroundLayer"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MovingPattern1" type="TextureRect" parent="AnimatedBackground"]
+[node name="MovingPattern1" type="TextureRect" parent="BackgroundLayer/AnimatedBackground"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_5w54k")
 layout_mode = 1
@@ -68,7 +68,7 @@ grow_vertical = 2
 texture = ExtResource("2_afl8q")
 expand_mode = 2
 
-[node name="MovingPattern2" type="TextureRect" parent="AnimatedBackground"]
+[node name="MovingPattern2" type="TextureRect" parent="BackgroundLayer/AnimatedBackground"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_5w54k")
 layout_mode = 1
@@ -82,7 +82,7 @@ grow_vertical = 2
 texture = ExtResource("3_2rgxm")
 expand_mode = 1
 
-[node name="BackgroundColor" type="ColorRect" parent="AnimatedBackground"]
+[node name="BackgroundColor" type="ColorRect" parent="BackgroundLayer/AnimatedBackground"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BackgroundColor2" type="ColorRect" parent="AnimatedBackground"]
+[node name="BackgroundColor2" type="ColorRect" parent="BackgroundLayer/AnimatedBackground"]
 modulate = Color(0, 0, 0, 0.501961)
 layout_mode = 1
 anchors_preset = 15
@@ -103,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MovingPattern3" type="TextureRect" parent="AnimatedBackground"]
+[node name="MovingPattern3" type="TextureRect" parent="BackgroundLayer/AnimatedBackground"]
 texture_repeat = 3
 material = SubResource("ShaderMaterial_5w54k")
 layout_mode = 1
@@ -122,7 +122,7 @@ stretch_mode = 1
 flip_h = true
 flip_v = true
 
-[node name="BackgroundColor3" type="ColorRect" parent="AnimatedBackground/MovingPattern3"]
+[node name="BackgroundColor3" type="ColorRect" parent="BackgroundLayer/AnimatedBackground/MovingPattern3"]
 modulate = Color(0, 0, 0, 0.670588)
 layout_mode = 1
 anchors_preset = 15
@@ -132,7 +132,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.305882)
 
-[node name="Label" type="Label" parent="AnimatedBackground"]
+[node name="Label" type="Label" parent="BackgroundLayer/AnimatedBackground"]
 layout_mode = 0
 offset_left = 205.0
 offset_top = 8.0
@@ -145,7 +145,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="BossTexture" type="TextureRect" parent="AnimatedBackground"]
+[node name="BossTexture" type="TextureRect" parent="BackgroundLayer/AnimatedBackground"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -162,49 +162,40 @@ grow_vertical = 2
 texture = ExtResource("4_v7ib8")
 expand_mode = 3
 
-[node name="Level1" parent="." instance=ExtResource("2_aog86")]
-layout_mode = 1
+[node name="LevelsLayer" type="CanvasLayer" parent="."]
+
+[node name="Level1" parent="LevelsLayer" instance=ExtResource("2_aog86")]
 offset_left = -32.0
 offset_top = -27.0
 offset_right = -32.0
 offset_bottom = -27.0
 
-[node name="Level2" parent="." instance=ExtResource("2_aog86")]
-layout_mode = 1
+[node name="Level2" parent="LevelsLayer" instance=ExtResource("2_aog86")]
 offset_left = -32.0
 offset_top = 32.0
 offset_right = -32.0
 offset_bottom = 32.0
 
-[node name="Level3" parent="." instance=ExtResource("2_aog86")]
-layout_mode = 1
+[node name="Level3" parent="LevelsLayer" instance=ExtResource("2_aog86")]
 offset_left = 24.0
 offset_top = 32.0
 offset_right = 24.0
 offset_bottom = 32.0
 
-[node name="Level4" parent="." instance=ExtResource("2_aog86")]
-layout_mode = 1
+[node name="Level4" parent="LevelsLayer" instance=ExtResource("2_aog86")]
 offset_left = 56.0
 offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 8.0
 
-[node name="Level5" parent="." instance=ExtResource("2_aog86")]
-layout_mode = 1
+[node name="Level5" parent="LevelsLayer" instance=ExtResource("2_aog86")]
 offset_left = 88.0
 offset_top = -16.0
 offset_right = 88.0
 offset_bottom = -16.0
 isBossBattle = true
 
-[node name="PauseMenu" parent="." instance=ExtResource("4_eo1go")]
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("4_eo1go")]
 visible = false
-z_index = 1
-layout_mode = 1
-
-[node name="Audio" type="Node" parent="."]
-
-[node name="Music" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("4_8f5kb")
-autoplay = true

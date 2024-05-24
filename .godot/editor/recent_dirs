@@ -1,7 +1,11 @@
+res://art/tutorial
+res://scenes/battle
+res://scenes/pause_menu
+res://global/audio_player
+res://shaders
+res://
 res://scenes/main_menu
 res://scenes/ui
-res://scenes/battle
-res://art/tutorial
 res://global
 res://global/transition
 res://scenes
@@ -13,4 +17,3 @@ res://scenes/card_target_selector
 res://characters/warrior
 res://characters/warrior/cards
 res://scenes/card_ui/card_states
-res://

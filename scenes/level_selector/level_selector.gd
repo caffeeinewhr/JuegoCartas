@@ -1,10 +1,11 @@
 extends Control
 
-@onready var levels: Array[Level] = [$Level1, $Level2, $Level3, $Level4, $Level5]
+@onready var levels: Array[Level] = [$LevelsLayer/Level1, $LevelsLayer/Level2, $LevelsLayer/Level3, $LevelsLayer/Level4, $LevelsLayer/Level5]
 @onready var completedLevels: Array[Level] = []
 @export var lineWidth: int = 2
 		
 func _ready():
+	AudioPlayer.play_music(preload("res://art/music/mapa.wav"))
 	setupLevels()
 
 func setupLevels():
@@ -28,4 +29,4 @@ func setupLevels():
 			line.points = [lvl.position, levels[i + 1].position]
 			line.width = lineWidth
 			line.z_index = -1
-			add_child(line)
+			$LevelsLayer.add_child(line)

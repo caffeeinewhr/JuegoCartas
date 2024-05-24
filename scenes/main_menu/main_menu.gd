@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	AudioPlayer.play_music(preload("res://art/music/demo_menu.wav"))
 	
 func _on_play_button_pressed():
 	$Audio/NormalClick.play()

@@ -10,6 +10,9 @@ func _ready() -> void:
 	for card: CardMenuUI in tooltip_card.get_children():
 		card.queue_free()
 
+	hide_tooltip()
+	await get_tree().create_timer(3.0).timeout
+	show_tooltip(preload("res://characters/warrior/cards/warrior_axe_attack.tres"))
 	
 func show_tooltip(card: Card)-> void:
 	var new_card  := CARD_MENU_UI_SCENE.instantiate() as CardMenuUI
