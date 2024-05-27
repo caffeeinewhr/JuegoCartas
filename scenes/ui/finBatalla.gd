@@ -9,7 +9,7 @@ enum Type {WIN, LOSE}
 
 
 func _ready()-> void:
-	continueButton.pressed.connect(get_tree().quit)
+	continueButton.pressed.connect(func(): Events.batalla_ganada.emit())
 	restartButton.pressed.connect(get_tree().quit)
 	Events.fin_batalla_request.connect(show_screen)
 

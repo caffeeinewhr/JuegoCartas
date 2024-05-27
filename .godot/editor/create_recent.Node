@@ -1,12 +1,12 @@
+Node
+CanvasLayer
 Label
 Panel
 Timer
 ColorRect
-CanvasLayer
 AudioStreamPlayer
 CenterContainer
 TextureRect
-Node
 Node2D
 CollisionShape2D
 Area2D

@@ -2,10 +2,10 @@ extends Node2D
 
 @export var char_stats: CharacterStats
 
-@onready var battle_ui: BattleUI = $BattleUI as BattleUI
-@onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
-@onready var enemy_handler: EnemyHandler = $EnemyHandler as EnemyHandler
-@onready var player: Player = $Player as Player
+@onready var battle_ui: BattleUI = $BattleUI
+@onready var player_handler: PlayerHandler = $PlayerHandler
+@onready var enemy_handler: EnemyHandler = $EnemyHandler
+@onready var player: Player = $Player
 
 var isTimerStarted: bool = false
 
@@ -19,6 +19,8 @@ func _ready() -> void:
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
 	
+	
+	
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	
@@ -27,6 +29,7 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 
 	start_battle(new_stats)
+	battle_ui.initialize_card_pile_ui()
 
 func _process(_delta):
 	if (isTimerStarted):

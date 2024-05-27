@@ -18,3 +18,6 @@ signal accion_enemiga(enemy: Enemy)
 signal enemy_turn_ended
 
 signal fin_batalla_request(text: String, type: FinBatalla.Type)
+signal batalla_ganada
+
+signal map_exited

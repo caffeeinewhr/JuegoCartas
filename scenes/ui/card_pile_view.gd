@@ -18,8 +18,7 @@ func _ready() -> void:
 	
 	card_tooltip_popup.hide_tooltip()
 
-	card_pile = preload("res://characters/warrior/warrior_starting_deck.tres")
-	show_current_view("Deck", true)
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

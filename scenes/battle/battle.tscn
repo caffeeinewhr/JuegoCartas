@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c6co1f6ltokpw"]
+[gd_scene load_steps=25 format=3 uid="uid://c6co1f6ltokpw"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_v23k3"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_b4ygg"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b8p46pw86uqfc" path="res://scenes/ui/card_pile_opener.tscn" id="17_m31pt"]
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="18_0vwuu"]
 [ext_resource type="Texture2D" uid="uid://y2kvosta1bos" path="res://art/tutorial/discard.png" id="18_rvdgc"]
+[ext_resource type="PackedScene" uid="uid://cu7snvcm8ig0c" path="res://scenes/ui/card_pile_view.tscn" id="22_l17ne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2sggn"]
 resource_local_to_scene = true
@@ -54,6 +55,7 @@ shape = SubResource("RectangleShape2D_qrmle")
 script = ExtResource("4_s5v0x")
 
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_v1hmm")]
+position = Vector2(205, 76)
 collision_layer = 2
 stats = ExtResource("5_jh0qk")
 
@@ -180,6 +182,17 @@ visible = false
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseLayer" instance=ExtResource("18_0vwuu")]
+visible = false
+
+[node name="CardPileView" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="DrawPileView" parent="CardPileView" instance=ExtResource("22_l17ne")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DiscardPileView" parent="CardPileView" instance=ExtResource("22_l17ne")]
+unique_name_in_owner = true
 visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
