@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6d27sfklmx4h"]
+
+[ext_resource type="PackedScene" uid="uid://bghjs74vebhcm" path="res://scenes/level_selector/level_selector.tscn" id="1_jtjiy"]
+[ext_resource type="Script" path="res://scenes/run/run.gd" id="1_tv56i"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_tv56i")
+
+[node name="LevelSelector" parent="." instance=ExtResource("1_jtjiy")]
+
+[node name="CurrentView" type="Node" parent="."]

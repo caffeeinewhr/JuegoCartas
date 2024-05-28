@@ -1,3 +1,5 @@
+res://scenes/run
+res://scenes
 res://
 res://art/tutorial
 res://scenes/battle
@@ -8,7 +10,6 @@ res://scenes/main_menu
 res://scenes/ui
 res://global
 res://global/transition
-res://scenes
 res://scenes/enemy
 res://enemies/crab
 res://art
