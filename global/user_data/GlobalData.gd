@@ -2,7 +2,8 @@
 extends Node
 
 # Datos globales del jugador
-var username: String = "username"
+var user_id: int = -1
+var username: String = ""
 var playtime: float = 0.0
 var last_update_playtime: float = 0.0
 var completed_levels: Array[int] = []
