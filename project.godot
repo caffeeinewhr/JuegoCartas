@@ -26,7 +26,7 @@ Events="*res://global/events.gd"
 Shaker="*res://global/shaker.gd"
 SceneTransition="*res://global/transition/scene_transition.tscn"
 AudioPlayer="*res://global/audio_player/audio_player.tscn"
-GlobalData="*res://global/GlobalData.gd"
+GlobalData="*res://global/user_data/GlobalData.gd"
 
 [display]
 

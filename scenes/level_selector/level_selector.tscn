@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bghjs74vebhcm"]
+[gd_scene load_steps=12 format=3 uid="uid://bghjs74vebhcm"]
 
 [ext_resource type="Script" path="res://scenes/level_selector/level_selector.gd" id="1_qcvhi"]
 [ext_resource type="Texture2D" uid="uid://bhjjbaq75b4nt" path="res://art/backgrounds/waterPattern.webp" id="2_afl8q"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="4_eo1go"]
 [ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="4_v7ib8"]
 [ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="5_rrqda"]
+[ext_resource type="PackedScene" uid="uid://2x1gxnne0f7t" path="res://scenes/level_selector/data.tscn" id="6_j78q0"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tutorial/tile_0087.png" id="6_pxl42"]
 
 [sub_resource type="Shader" id="Shader_xyoir"]
 code = "shader_type canvas_item;
@@ -75,7 +77,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 63.0
+offset_left = 69.0
 offset_right = -184.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -87,7 +89,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -193.0
+offset_right = -187.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -161,6 +163,37 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_v7ib8")
 expand_mode = 3
+
+[node name="UserStatsLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="UserStatsLayer"]
+position = Vector2(24, 24)
+scale = Vector2(2, 2)
+texture = ExtResource("6_pxl42")
+
+[node name="dataUsername" parent="UserStatsLayer" instance=ExtResource("6_j78q0")]
+offset_left = 7.0
+offset_top = 56.0
+offset_right = 7.0
+offset_bottom = 56.0
+
+[node name="dataTimeLeft" parent="UserStatsLayer" instance=ExtResource("6_j78q0")]
+offset_left = 7.0
+offset_top = 72.0001
+offset_right = 7.0
+offset_bottom = 72.0001
+
+[node name="dataKills" parent="UserStatsLayer" instance=ExtResource("6_j78q0")]
+offset_left = 7.0
+offset_top = 88.0
+offset_right = 7.0
+offset_bottom = 88.0
+
+[node name="dataDeaths" parent="UserStatsLayer" instance=ExtResource("6_j78q0")]
+offset_left = 7.0
+offset_top = 104.0
+offset_right = 7.0
+offset_bottom = 104.0
 
 [node name="LevelsLayer" type="CanvasLayer" parent="."]
 

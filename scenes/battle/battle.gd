@@ -6,20 +6,17 @@ extends Node2D
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
 @onready var player: Player = $Player
+@onready var timer = $Timer
+@onready var timerUI = $BattleUI/Timer
 
 var isTimerStarted: bool = false
 
 func _ready() -> void:
 	AudioPlayer.play_music(preload("res://art/music/pelea.wav"), -3.0)
-	await get_tree().create_timer(0.5).timeout
-	$Timer.start()
-	isTimerStarted = true
 	#Esta parte se hará en las nuevas runs, porque se mantienen las estadisticas entre niveles
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
-	
-	
 	
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
@@ -29,11 +26,18 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 
 	start_battle(new_stats)
+	start_timer()
 	battle_ui.initialize_card_pile_ui()
 
 func _process(_delta):
 	if (isTimerStarted):
-		$BattleUI/Timer.label.text = str(int($Timer.time_left))
+		timerUI.label.text = str(int(timer.time_left))
+	
+func start_timer():
+	timer.set_wait_time(GlobalData.time_left)
+	await get_tree().create_timer(0.5).timeout
+	timer.start()
+	isTimerStarted = true
 	
 func start_battle(stats: CharacterStats) -> void:
 	enemy_handler.reset_enemy_actions()
@@ -41,6 +45,7 @@ func start_battle(stats: CharacterStats) -> void:
 
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
+		GlobalData.increase_kills(1)
 		Events.fin_batalla_request.emit("Victoria!!", FinBatalla.Type.WIN)
 
 func _on_enemy_turn_ended() -> void:
@@ -48,8 +53,10 @@ func _on_enemy_turn_ended() -> void:
 	enemy_handler.reset_enemy_actions()
 	
 func _on_player_died() -> void:
+	GlobalData.increase_deaths(1)
 	Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
 
 func _on_timer_timeout():
 	if (isTimerStarted == true):
+		GlobalData.increase_deaths(1)
 		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
