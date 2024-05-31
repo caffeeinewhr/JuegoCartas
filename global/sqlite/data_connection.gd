@@ -1,8 +1,8 @@
 extends Node2D
 
 var database: SQLite
-var path = "C:/Users/Marco/Documents/GameDev/TFG/WebGato/db.sqlite3"
-var api_url = "http://your-django-site/api/user/"
+var path = "C:/Users/Marco/Documents/GameDev/TFG/WebGato-main/WebGato-main/db.sqlite3"
+var api_url = "http://127.0.0.1:8000/api/user/"
 
 func _ready() -> void:
 	database = SQLite.new()
@@ -20,9 +20,9 @@ func fetch_user_data(api_url: String) -> void:
 	add_child(http_request)
 	http_request.request_completed.connect(self._on_request_completed)
 
-	var error = http_request.request(api_url)
-	if error != OK:
-		print("Error fetching user data: ", error)
+	var response = http_request.request(api_url)
+	if response != OK:
+		print("Error fetching user data: ", response)
 
 func _on_request_completed(result: int, response_code: int, headers: Array, body: PackedByteArray) -> void:
 	if response_code == 200:

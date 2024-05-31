@@ -13,9 +13,6 @@ func _ready():
 	setupData()
 	setupLevels()
 	
-func _process(delta):
-	print("Total playtime: ", str(GlobalData.playtime), " seconds")
-	
 func setupData():
 	data_username.label.text = "Username: " + GlobalData.username
 	data_time_left.label.text = "Time left: " + str(GlobalData.time_left)

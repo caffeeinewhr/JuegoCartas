@@ -14,8 +14,8 @@ var time_left: float = 40.0
 func _ready():
 	playtime = Time.get_ticks_msec() / 1000.0
 	set_process(true)
-	
-func _process(delta):
+
+func _process(_delta):
 	var current_playtime = Time.get_ticks_msec() / 1000.0
 	playtime += current_playtime - last_update_playtime
 	last_update_playtime = current_playtime
