@@ -1,16 +1,7 @@
-# Deck Builder Tutorial for Godot
-A roguelike deckbuilder tutorial project made in Godot 4.
-This branch only contains the art for the game.
+# Deck Builder realizado en Godot
+Un deckbuilder realizado en Godot 4.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M0RXV24)
-
-### Use this version if you want to follow along with the tutorial series.
-
-### Credits
-- [Ben from Heartbeast](https://www.youtube.com/@uheartbeast): he originally started working on this project. He gave me permission, inspiration and also great ideas for this tutorial.
-- [Kenney](https://kenney.nl)'s tiny dungeon asset pack
-- Sound effects:
-  - [StarNinjas](https://opengameart.org/users/starninjas) from OpenGameArt 
-  - [Pixabay](https://pixabay.com/sound-effects/shield-guard-6963/) 
-  - [artisticdude](https://opengameart.org/users/artisticdude) from OpenGameArt
-- Music made by [Tad](https://www.youtube.com/c/Tadon)
+<iframe frameborder="0"
+                src="https://itch.io/embed/2712313?linkback=true&amp;border_width=5&amp;bg_color=1e1e1e&amp;fg_color=ffffff&amp;link_color=dc1f55&amp;border_color=ff164b"
+                width="560" height="175"><a href="https://caffeeinewhore.itch.io/sleepy-rush">Sleepy Rush</a>
+            </iframe>
