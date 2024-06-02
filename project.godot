@@ -23,11 +23,11 @@ buses/default_bus_layout=""
 [autoload]
 
 Events="*res://global/events.gd"
-Shaker="*res://global/shaker.gd"
-SceneTransition="*res://global/transition/scene_transition.tscn"
-AudioPlayer="*res://global/audio_player/audio_player.tscn"
 GlobalData="*res://global/user_data/GlobalData.gd"
 DataConnection="*res://global/sqlite/data_connection.gd"
+AudioPlayer="*res://global/audio_player/audio_player.tscn"
+SceneTransition="*res://global/transition/scene_transition.tscn"
+Shaker="*res://global/shaker.gd"
 
 [display]
 
@@ -36,10 +36,6 @@ window/size/viewport_height=144
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 [gui]
 
