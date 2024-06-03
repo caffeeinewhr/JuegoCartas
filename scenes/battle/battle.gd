@@ -28,7 +28,6 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 
 	start_battle(new_stats)
-	start_timer()
 	battle_ui.initialize_card_pile_ui()
 	
 	GlobalData.set_timer_real_path($TimerReal.get_path())
