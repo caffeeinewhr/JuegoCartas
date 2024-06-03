@@ -24,7 +24,7 @@ buses/default_bus_layout=""
 
 Events="*res://global/events.gd"
 GlobalData="*res://global/user_data/GlobalData.gd"
-DataConnection="*res://global/sqlite/data_connection.gd"
+Api="*res://global/user_data/Api.gd"
 AudioPlayer="*res://global/audio_player/audio_player.tscn"
 SceneTransition="*res://global/transition/scene_transition.tscn"
 Shaker="*res://global/shaker.gd"
