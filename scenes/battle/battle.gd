@@ -28,6 +28,7 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 
 	start_battle(new_stats)
+	start_timer()
 	battle_ui.initialize_card_pile_ui()
 	
 	GlobalData.set_timer_real_path($TimerReal.get_path())
@@ -43,6 +44,7 @@ func start_battle(stats: CharacterStats) -> void:
 
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
+		GlobalData.increase_kills(1)
 		Events.fin_batalla_request.emit("Victoria!!", FinBatalla.Type.WIN)
 
 func _on_enemy_turn_ended() -> void:
@@ -50,6 +52,7 @@ func _on_enemy_turn_ended() -> void:
 	enemy_handler.reset_enemy_actions()
 	
 func _on_player_died() -> void:
+	GlobalData.increase_deaths(1)
 	Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
 
 func _on_timer_timeout():

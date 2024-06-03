@@ -1,7 +1,6 @@
-res://characters/warrior/cards
-res://art/tutorial
 C:/Users/Marco/Documents/GameDev/TFG/JuegoGatoDefinitivo/html
 res://
+res://art/tutorial
 res://scenes/battle
 res://scenes/pause_menu
 res://global/audio_player
@@ -17,4 +16,5 @@ res://art
 res://scenes/card_ui
 res://scenes/card_target_selector
 res://characters/warrior
+res://characters/warrior/cards
 res://scenes/card_ui/card_states
