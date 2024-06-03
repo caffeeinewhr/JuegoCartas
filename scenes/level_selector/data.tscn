@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://2x1gxnne0f7t"]
+
+[ext_resource type="Script" path="res://scenes/level_selector/data.gd" id="1_gq7d3"]
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://art/tutorial/player_heart.png" id="1_jny2d"]
+
+[node name="data" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_gq7d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_jny2d")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.5
+offset_right = 70.5
+offset_bottom = 21.0
+scale = Vector2(0.4, 0.4)
+text = "Manolo"

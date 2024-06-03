@@ -21,5 +21,3 @@ signal fin_batalla_request(text: String, type: FinBatalla.Type)
 signal batalla_ganada
 
 signal map_exited
-
-signal battle_rewards_exited

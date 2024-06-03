@@ -68,7 +68,7 @@ position = Vector2(40, 73)
 script = ExtResource("8_cdiat")
 hand = NodePath("../BattleUI/Hand")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerReal" type="Timer" parent="."]
 wait_time = 40.0
 one_shot = true
 
@@ -195,4 +195,4 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerReal" to="." method="_on_timer_timeout"]
