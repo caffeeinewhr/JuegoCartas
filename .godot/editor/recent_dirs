@@ -1,5 +1,7 @@
-res://characters/warrior/cards
+res://scenes/ui
 res://art/tutorial
+res://enemies/boss
+res://characters/warrior/cards
 C:/Users/Marco/Documents/GameDev/TFG/JuegoGatoDefinitivo/html
 res://
 res://scenes/battle
@@ -7,7 +9,6 @@ res://scenes/pause_menu
 res://global/audio_player
 res://shaders
 res://scenes/main_menu
-res://scenes/ui
 res://global
 res://global/transition
 res://scenes
