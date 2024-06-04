@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqcuw85f4ty1w"]
+
+[ext_resource type="Script" path="res://global/user_data/api.gd" id="1_682nb"]
+
+[node name="api" type="Node2D"]
+script = ExtResource("1_682nb")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
