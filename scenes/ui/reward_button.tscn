@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bej2rjg04i7a8"]
+
+[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/tutorial/heart.png" id="1_3to3q"]
+[ext_resource type="Script" path="res://scenes/ui/reward_button.gd" id="1_mklut"]
+
+[node name="RewardButton" type="Button"]
+custom_minimum_size = Vector2(75, 14)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_mklut")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CustomIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_3to3q")
+stretch_mode = 5
+
+[node name="CustomText" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "Añadir Carta"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

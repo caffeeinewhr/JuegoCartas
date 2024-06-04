@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://kcvbkrl0liul"]
+
+[ext_resource type="Theme" uid="uid://cuvab3qu8ggvx" path="res://main_theme.tres" id="1_s0jsk"]
+[ext_resource type="Texture2D" uid="uid://bmggvrkgoud23" path="res://art/tutorial/rarity.png" id="2_4gwi8"]
+[ext_resource type="Script" path="res://scenes/ui/card_visuals.gd" id="2_wv6am"]
+[ext_resource type="Resource" uid="uid://bhsgjlhr8xhye" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="3_1iwmn"]
+
+[node name="CardVisuals" type="Control"]
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_s0jsk")
+script = ExtResource("2_wv6am")
+card = ExtResource("3_1iwmn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+offset_right = 10.0
+offset_bottom = 10.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rarity" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 6.0
+grow_horizontal = 0
+texture = ExtResource("2_4gwi8")
+expand_mode = 1
+stretch_mode = 5
