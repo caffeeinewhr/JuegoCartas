@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7e08bq4njgu"]
+
+[ext_resource type="PackedScene" uid="uid://cplcs76y7q8b" path="res://scenes/ui/card_menu_ui.tscn" id="1_pe8ll"]
+[ext_resource type="PackedScene" uid="uid://4ffrm31ou3q3" path="res://scenes/ui/card_tooltip_popup.tscn" id="2_ebyuj"]
+
+[node name="CardReward" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.854902)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -21.0
+offset_right = 41.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Cards" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="CardMenuUI" parent="VBoxContainer/Cards" instance=ExtResource("1_pe8ll")]
+layout_mode = 2
+
+[node name="CardMenuUI2" parent="VBoxContainer/Cards" instance=ExtResource("1_pe8ll")]
+layout_mode = 2
+
+[node name="CardMenuUI3" parent="VBoxContainer/Cards" instance=ExtResource("1_pe8ll")]
+layout_mode = 2
+
+[node name="SkipButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pasar"
+
+[node name="CardTooltipPopup" parent="." instance=ExtResource("2_ebyuj")]
+visible = false
+layout_mode = 1
+
+[node name="TakeButton" type="Button" parent="CardTooltipPopup"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.5
+offset_top = -29.0
+offset_right = 36.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "Recoger"
