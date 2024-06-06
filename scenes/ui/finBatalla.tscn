@@ -1,32 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dunflvpiv5odo"]
+[gd_scene load_steps=4 format=3 uid="uid://dunflvpiv5odo"]
 
-[ext_resource type="Shader" path="res://shaders/finBatalla.gdshader" id="1_0e6ot"]
 [ext_resource type="Script" path="res://scenes/ui/finBatalla.gd" id="1_cpxlf"]
-[ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="1_y04hr"]
 [ext_resource type="PackedScene" uid="uid://bej2rjg04i7a8" path="res://scenes/ui/reward_button.tscn" id="4_7hmh2"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlcsn"]
-shader = ExtResource("1_0e6ot")
-shader_parameter/resolution = Vector2(600, 400)
-shader_parameter/spiral_color = Color(0.054902, 0, 0.00784314, 1)
-shader_parameter/frequency = 8.0
-shader_parameter/speed = 8.0
-shader_parameter/brightness = 5.0
-shader_parameter/balance = 0.5
-shader_parameter/octaves = 4.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_0i1qa"]
 font_size = 24
 
-[node name="finBatalla" type="Panel"]
-process_mode = 3
-material = SubResource("ShaderMaterial_vlcsn")
+[node name="BattleReward" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_y04hr")
 script = ExtResource("1_cpxlf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -36,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -55.0
+offset_top = -74.0
+offset_right = 55.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 

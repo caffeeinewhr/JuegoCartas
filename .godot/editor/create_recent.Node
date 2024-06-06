@@ -1,3 +1,4 @@
+Control
 Button
 HBoxContainer
 VBoxContainer
@@ -11,4 +12,3 @@ Node
 CanvasLayer
 Timer
 AudioStreamPlayer
-CenterContainer

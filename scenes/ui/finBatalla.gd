@@ -1,5 +1,5 @@
 class_name FinBatalla
-extends Panel
+extends Control
 
 enum Type {WIN, LOSE}
 
