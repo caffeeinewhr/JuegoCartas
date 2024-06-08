@@ -7,25 +7,19 @@ const BASE_STYLEBOX := preload("res://scenes/card_ui/card_base_stylebox.tres")
 const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
 
 @export var card: Card : set = set_card
+
 @onready var visuals: CardVisuals = $Visuals
 
+func _on_visuals_mouse_entered() -> void:
+	visuals.panel.add_theme_stylebox_override("panel", HOVER_STYLEBOX)
 
 
-func _on_visuals_gui_input(event: InputEvent)-> void:
-	if event.is_action_pressed("left_mouse"):
-		tooltip_requested.emit(card)
-	
-func _on_visuals_mouse_entered()->void:
-	visuals.panel.set("theme_override_style/panel", HOVER_STYLEBOX)
+func _on_visuals_mouse_exited() -> void:
+	visuals.panel.add_theme_stylebox_override("panel", BASE_STYLEBOX)
 
-
-func _on_visuals_mouse_exited()->void:
-	visuals.panel.set("theme_override_style/panel", BASE_STYLEBOX)
-
-func set_card(value: Card)-> void:
+func set_card(value: Card) -> void:
 	if not is_node_ready():
 		await ready
-
+	
 	card = value
-	cost.text = str(card.cost)
-	icon.texture = card.icon
+	visuals.card = card

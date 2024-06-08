@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3u1b6wroplhq"]
+
+[ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://art/tutorial/tile_0117.png" id="1_7cjwo"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_slam.gd" id="1_pw1d8"]
+
+[resource]
+script = ExtResource("1_pw1d8")
+id = ""
+type = 0
+rarity = 1
+target = 2
+cost = 2
+icon = ExtResource("1_7cjwo")
+tooltip_text = "[center]Hace [color=red]9[/color] de daño[/center]"
