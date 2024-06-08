@@ -23,6 +23,7 @@ buses/default_bus_layout=""
 [autoload]
 
 Events="*res://global/events.gd"
+Api="*res://global/user_data/api.tscn"
 GlobalData="*res://global/user_data/GlobalData.gd"
 AudioPlayer="*res://global/audio_player/audio_player.tscn"
 SceneTransition="*res://global/transition/scene_transition.tscn"

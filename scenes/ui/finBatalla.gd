@@ -6,7 +6,6 @@ enum Type {WIN, LOSE}
 @onready var label: Label = %Label
 @onready var continueButton: Button = %ContinueButton   
 
-
 func _ready()-> void:
 	continueButton.pressed.connect(func(): Events.batalla_ganada.emit())
 	Events.fin_batalla_request.connect(show_screen)
