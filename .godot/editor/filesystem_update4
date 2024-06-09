@@ -52,3 +52,10 @@ res://characters/warrior/cards/warrior_time_attack.tres
 res://characters/warrior/cards/warrior_big_block.gd
 res://characters/warrior/cards/warrior_big_block.tres
 res://scenes/enemy/enemy.tscn
+res://enemies/boss/enemy_boss.tres
+res://enemies/boss/boss_enemy_ia.tscn
+res://enemies/boss/boss_block_action.gd
+res://enemies/boss/boss_attack_action.gd
+res://scenes/ui/card_pile_opener.tscn
+res://scenes/battle/battle_3.tscn
+res://scenes/battle/battle_4.tscn
