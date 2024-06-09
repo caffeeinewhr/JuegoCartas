@@ -49,3 +49,6 @@ res://enemies/crab/crab_enemy_ia.tscn
 res://characters/warrior/cards/warrior_time_up.gd
 res://characters/warrior/cards/warrior_time_up.tres
 res://characters/warrior/cards/warrior_time_attack.tres
+res://characters/warrior/cards/warrior_big_block.gd
+res://characters/warrior/cards/warrior_big_block.tres
+res://scenes/enemy/enemy.tscn

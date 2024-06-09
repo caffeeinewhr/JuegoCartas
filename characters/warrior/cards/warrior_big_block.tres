@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://v88loa6td3a8"]
+
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tutorial/tile_0101.png" id="1_oqwtb"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_block.gd" id="2_puhl0"]
+
+[resource]
+script = ExtResource("2_puhl0")
+id = "warrior_block"
+type = 1
+rarity = 2
+target = 0
+cost = 3
+icon = ExtResource("1_oqwtb")
+tooltip_text = "[center]Grants [color=blue]10[/color] shield[/center]"
