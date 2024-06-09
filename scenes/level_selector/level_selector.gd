@@ -25,7 +25,8 @@ func setupLevels():
 		var lvl = levels[i]
 		lvl.number = i + 1
 		lvl.label.text = "Level " + str(i + 1)
-		#lvl.battleScene = load("res://scenes/battle/level_" + str(i + 1) + ".tscn")
+		lvl.battleScene = "res://scenes/battle/battle_" + str(i + 1) + ".tscn"
+		
 		if i == 0:
 			lvl.isFirstLevel = true
 			lvl.isPlayable = true

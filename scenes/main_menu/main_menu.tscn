@@ -94,6 +94,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="LabelWelcome" type="Label" parent="AnimatedBackground"]
+layout_mode = 0
 offset_left = 175.0
 offset_top = 2.0
 offset_right = 254.0

@@ -30,7 +30,6 @@ func _on_resume_button_pressed():
 
 func _on_quit_button_pressed():
 	$Audio/ExitClick.play()
-	Api.update_user_stats()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()
 

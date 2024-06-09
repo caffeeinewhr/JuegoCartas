@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ui/card_reward.gd" id="1_ehavb"]
 [ext_resource type="PackedScene" uid="uid://cplcs76y7q8b" path="res://scenes/ui/card_menu_ui.tscn" id="1_pe8ll"]
-[ext_resource type="Resource" uid="uid://djxjqkhohaxcm" path="res://characters/warrior/cards/warrior_time.tres" id="2_bqagw"]
+[ext_resource type="Resource" uid="uid://djxjqkhohaxcm" path="res://characters/warrior/cards/warrior_time_attack.tres" id="2_bqagw"]
 [ext_resource type="PackedScene" uid="uid://4ffrm31ou3q3" path="res://scenes/ui/card_tooltip_popup.tscn" id="2_ebyuj"]
 [ext_resource type="Resource" uid="uid://c3u1b6wroplhq" path="res://characters/warrior/cards/warrior_big_slam.tres" id="3_kcjcv"]
 [ext_resource type="Resource" uid="uid://bhsgjlhr8xhye" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_ba0xv"]

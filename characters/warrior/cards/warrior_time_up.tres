@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://6w05eb1wxntt"]
+
+[ext_resource type="Texture2D" uid="uid://c4e7ovx16yfl1" path="res://art/tutorial/tile_0113.png" id="1_4lnc7"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_time_up.gd" id="1_jb5go"]
+
+[resource]
+script = ExtResource("1_jb5go")
+id = "warrior_sword_attack"
+type = 0
+rarity = 0
+target = 2
+cost = 1
+icon = ExtResource("1_4lnc7")
+tooltip_text = "Grants [color=yellow]4[/color] seconds "

@@ -44,6 +44,7 @@ func start_battle(stats: CharacterStats) -> void:
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
 		GlobalData.increase_kills(1)
+		GlobalData.complete_level(GlobalData.current_level)
 		Events.fin_batalla_request.emit("Victoria!!", FinBatalla.Type.WIN)
 
 func _on_enemy_turn_ended() -> void:
@@ -51,11 +52,9 @@ func _on_enemy_turn_ended() -> void:
 	enemy_handler.reset_enemy_actions()
 	
 func _on_player_died() -> void:
-	print(GlobalData.deaths)
 	GlobalData.increase_deaths(1)
-	print(GlobalData.deaths)
 	Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
-
+	
 func _on_timer_timeout():
 	if (isTimerStarted):
 		GlobalData.increase_deaths(1)

@@ -5,6 +5,7 @@ var username: String = ""
 var playtime: float = 0.0
 var last_update_playtime: float = 0.0
 var completed_levels: Array[int] = []
+var current_level: int
 var kills: int = 0
 var deaths: int = 0
 var time_left: float = 40.0

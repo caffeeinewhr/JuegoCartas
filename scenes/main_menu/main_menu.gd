@@ -8,7 +8,6 @@ extends Control
 func _ready():
 	AudioPlayer.play_music(preload("res://art/music/demo_menu.wav"))
 	Api.connect("user_validation_completed", Callable(self, "_on_user_validation_completed"))
-	Api.connect("user_update_completed", Callable(self, "_on_user_update_completed"))
 	Api.connect("user_stats_retrieved", Callable(self, "_on_user_stats_retrieved"))
 
 func _on_play_button_pressed():
@@ -49,24 +48,17 @@ func _on_user_validation_completed(success: bool):
 	else:
 		label_welcome.text = "Welcome " + GlobalData.username + "!"
 		$Form.hide()
-		print("User validated successfully")
+		print("User validated successfully (on main.tscn)")
 		Api.get_user_stats(GlobalData.username)
 
 func _on_user_stats_retrieved(success: bool, stats: Dictionary):
 	if success:
 		GlobalData.kills = stats.get('kills', 0)
 		GlobalData.deaths = stats.get('deaths', 0)
-		GlobalData.increase_deaths(1)
 		print("User stats retrieved and updated in GlobalData")
 	else:
 		print("Failed to retrieve user stats")
-		
-func _on_user_update_completed(success: bool):
-	if success:
-		print("User stats updated successfully")
-	else:
-		print("Failed to update user stats")
-			
+
 func _on_close_button_pressed():
 	$Audio/NormalClick.play()
 	$Form.hide()

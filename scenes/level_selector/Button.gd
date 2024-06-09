@@ -6,7 +6,9 @@ extends Button
 func _on_pressed():
 	if level.isPlayable:
 		audio.get_node("Click").play()
+		GlobalData.current_level = level.number
 		SceneTransition.load_scene(level.battleScene)
+		print("Level pressed: " + str(GlobalData.current_level))
 	
 func _on_mouse_entered():
 	audio.get_node("Hover").play()
