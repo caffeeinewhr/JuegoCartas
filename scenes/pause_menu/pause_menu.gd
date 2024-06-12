@@ -2,6 +2,10 @@ extends Control
 
 var isPaused: bool = false
 
+func _ready():
+	if GlobalData.username.is_empty():
+		$VBoxContainer/SaveButton.hide()
+	
 func _input(event):
 	if event.is_action_pressed("pause"):
 		$Audio/ExitClick.play()
@@ -49,3 +53,9 @@ func _on_menu_button_mouse_entered():
 
 func _on_quit_button_mouse_entered():
 	$Audio/Hover.play()
+
+func _on_save_button_mouse_entered():
+	$Audio/Hover.play()
+
+func _on_save_button_pressed():
+	Api.update_user_stats()

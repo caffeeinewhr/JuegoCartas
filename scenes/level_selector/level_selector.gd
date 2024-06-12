@@ -14,7 +14,11 @@ func _ready():
 	setupLevels()
 	
 func setupData():
-	data_username.label.text = "Username: " + GlobalData.username
+	if GlobalData.username.is_empty():
+		data_username.hide()
+	else:
+		data_username.label.text = "Username: " + GlobalData.username
+		
 	data_time_left.label.text = "Time left: " + str(GlobalData.time_left)
 	data_kills.label.text = "Kills: " + str(GlobalData.kills)
 	data_deaths.label.text = "Deaths: " + str(GlobalData.deaths)
