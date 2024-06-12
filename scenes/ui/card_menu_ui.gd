@@ -12,7 +12,7 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
 
 func _on_visuals_mouse_entered() -> void:
 	visuals.panel.add_theme_stylebox_override("panel", HOVER_STYLEBOX)
-
+	emit_signal("tooltip_requested", card) # Emitir la señal aquí
 
 func _on_visuals_mouse_exited() -> void:
 	visuals.panel.add_theme_stylebox_override("panel", BASE_STYLEBOX)
