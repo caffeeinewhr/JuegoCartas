@@ -22,9 +22,9 @@ var parent: Control
 var tween: Tween
 var playable := true : set = _set_playable
 var disabled := false
+var posX
 
 func _ready() -> void:
-	
 	Events.card_aim_started.connect(_on_card_drag_or_aiming_started)
 	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
 	Events.card_drag_ended.connect(_on_card_drag_or_aim_ended)
@@ -50,9 +50,20 @@ func _on_gui_input(event: InputEvent) -> void:
 func _on_mouse_entered() -> void:
 	card_state_machine.on_mouse_entered()
 	Events.card_tooltip_requested.emit(card.icon, card.tooltip_text, self)
+	apply_hover_effect()
 
+func apply_hover_effect() -> void:
+	posX = self.position.x
+	self.scale = Vector2(1.1, 1.1)
+	self.position.x = posX - 1
+
+func reset_hover_effect() -> void:
+	self.scale = Vector2(1, 1)
+	self.position.x = posX
+	
 func _on_mouse_exited() -> void:
 	card_state_machine.on_mouse_exited()
+	reset_hover_effect()
 
 func _set_card(value: Card)-> void:
 	if not is_node_ready():
