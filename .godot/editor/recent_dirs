@@ -1,3 +1,6 @@
+res://art/backgrounds
+res://scenes/battle_reward
+res://art/EnemySprites
 res://enemies/boss
 res://art/tutorial
 res://characters/warrior/cards
@@ -17,6 +20,3 @@ res://scenes
 res://scenes/enemy
 res://enemies/crab
 res://art
-res://scenes/card_ui
-res://scenes/card_target_selector
-res://scenes/card_ui/card_states

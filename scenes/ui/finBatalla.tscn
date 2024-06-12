@@ -6,7 +6,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_0i1qa"]
 font_size = 24
 
-[node name="BattleReward" type="Control"]
+[node name="FinBatalla" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
