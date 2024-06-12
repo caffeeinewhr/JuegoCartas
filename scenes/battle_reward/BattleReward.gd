@@ -134,4 +134,4 @@ func _on_card_reward_taken(card: Card) -> void:
 		node.show()
 	
 func _on_back_button_pressed():
-	Events.fin_batalla_request.emit()
+	SceneTransition.load_scene("res://scenes/level_selector/level_selector.tscn")
