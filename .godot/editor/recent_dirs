@@ -1,8 +1,12 @@
-res://scenes/ui
+res://art/backgrounds
+res://scenes/battle_reward
+res://art/EnemySprites
+res://enemies/boss
 res://art/tutorial
 res://characters/warrior/cards
+res://global/user_data
+res://scenes/ui
 res://characters/warrior
-res://enemies/boss
 C:/Users/Marco/Documents/GameDev/TFG/JuegoGatoDefinitivo/html
 res://
 res://scenes/battle
@@ -16,6 +20,3 @@ res://scenes
 res://scenes/enemy
 res://enemies/crab
 res://art
-res://scenes/card_ui
-res://scenes/card_target_selector
-res://scenes/card_ui/card_states

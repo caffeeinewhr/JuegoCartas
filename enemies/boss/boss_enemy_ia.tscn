@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1idcjpq3bevo"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_i6s78"]
+[ext_resource type="Script" path="res://enemies/boss/boss_attack_action.gd" id="2_pcl4n"]
+[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://art/tutorial/tile_0107.png" id="3_0h88s"]
+[ext_resource type="Script" path="res://custom_resources/accionEnemiga.gd" id="4_vhhh0"]
+[ext_resource type="Script" path="res://enemies/boss/boss_block_action.gd" id="5_6qbbo"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="6_5ja4l"]
+[ext_resource type="Script" path="res://enemies/crab/crab_megablock_action.gd" id="7_ubbkc"]
+
+[sub_resource type="Resource" id="Resource_g42fn"]
+script = ExtResource("4_vhhh0")
+number = "8"
+icon = ExtResource("3_0h88s")
+
+[sub_resource type="Resource" id="Resource_nljnt"]
+script = ExtResource("4_vhhh0")
+number = "8"
+icon = ExtResource("6_5ja4l")
+
+[sub_resource type="Resource" id="Resource_myixp"]
+script = ExtResource("4_vhhh0")
+number = ""
+icon = ExtResource("6_5ja4l")
+
+[node name="BossEnemyIA" type="Node"]
+script = ExtResource("1_i6s78")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_pcl4n")
+accion = SubResource("Resource_g42fn")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("5_6qbbo")
+accion = SubResource("Resource_nljnt")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("7_ubbkc")
+accion = SubResource("Resource_myixp")

@@ -1,19 +1,33 @@
 extends Node
 
 # Datos globales del jugador
-var user_id: int = -1
 var username: String = ""
 var playtime: float = 0.0
 var last_update_playtime: float = 0.0
 var completed_levels: Array[int] = []
+var current_level: int
 var kills: int = 0
 var deaths: int = 0
 var time_left: float = 40.0
 var timer_real: Timer = null
 
+const BASE_CARD_REWARDS := 3
+const BASE_COMMON_WEIGHT := 6.0
+const BASE_UNCOMMON_WEIGHT := 3.7
+const BASE_RARE_WEIGHT := 0.3
+
+@export var card_rewards: Array[Card] = []
+@export_range(0.0, 10.0) var common_weight := BASE_COMMON_WEIGHT
+@export_range(0.0, 10.0) var uncommon_weight := BASE_UNCOMMON_WEIGHT
+@export_range(0.0, 10.0) var rare_weight := BASE_RARE_WEIGHT
+
 func _ready():
 	playtime = Time.get_ticks_msec() / 1000.0
 	set_process(true)
+	# Inicializar card_rewards como un array si no lo está ya
+	if card_rewards.size() == 0:
+		card_rewards = []
+		print("Initialized card_rewards as an empty array")
 
 func _process(_delta):
 	var current_playtime = Time.get_ticks_msec() / 1000.0
@@ -22,6 +36,11 @@ func _process(_delta):
 	
 	if timer_real:
 		time_left = timer_real.time_left
+
+func reset_weights() -> void:
+	common_weight = BASE_COMMON_WEIGHT
+	uncommon_weight = BASE_UNCOMMON_WEIGHT
+	rare_weight = BASE_RARE_WEIGHT
 
 func set_timer_real_path(path: NodePath):
 	timer_real = get_node(path)

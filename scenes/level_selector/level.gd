@@ -5,7 +5,8 @@ class_name Level
 @onready var boss: Control = $Boss
 @onready var label: Label = $Label
 @onready var button: Button = $Button
-@onready var battleScene: String = "res://scenes/battle/battle.tscn"
+@onready var battleScene: String
+
 @export var number: int = 0
 @export var isCompleted: bool = false
 @export var isPlayable: bool = false

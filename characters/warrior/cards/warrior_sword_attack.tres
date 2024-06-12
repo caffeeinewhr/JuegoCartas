@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c102yq6ditij5"]
+
+[ext_resource type="Texture2D" uid="uid://bxgrktox5it82" path="res://art/tutorial/tile_0105.png" id="1_ij6ha"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_sword_attack.gd" id="1_sqpbm"]
+
+[resource]
+script = ExtResource("1_sqpbm")
+id = "warrior_sword_attack"
+type = 0
+rarity = 0
+target = 2
+cost = 1
+icon = ExtResource("1_ij6ha")
+tooltip_text = "[center]Deals [color=red]2[/color] damage[/center]"
