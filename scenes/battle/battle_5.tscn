@@ -1,31 +1,32 @@
-[gd_scene load_steps=25 format=3 uid="uid://bys3fbkhlhyw5"]
+[gd_scene load_steps=26 format=3 uid="uid://cdj86r4386sj1"]
 
-[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_8rvo4"]
-[ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="2_4xwio"]
-[ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_ngoul"]
-[ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_886bq"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="5_bsvls"]
-[ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="6_q601l"]
-[ext_resource type="Resource" uid="uid://b8d5yfxkx033c" path="res://enemies/boss/enemy_boss.tres" id="7_cjqa2"]
-[ext_resource type="PackedScene" uid="uid://efmvom1i6akt" path="res://scenes/player/player.tscn" id="8_wymgq"]
-[ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="9_ynt0u"]
-[ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="10_4ge2e"]
-[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="11_f5kv7"]
-[ext_resource type="PackedScene" uid="uid://bq66dpoe1yij" path="res://scenes/battle/timer.tscn" id="12_g44rn"]
-[ext_resource type="Script" path="res://scenes/ui/hand.gd" id="13_04sak"]
-[ext_resource type="PackedScene" uid="uid://c5rs2totlrygb" path="res://scenes/ui/mana_ui.tscn" id="14_8k5cm"]
-[ext_resource type="PackedScene" uid="uid://ggogqm7l4e71" path="res://scenes/ui/tooltip.tscn" id="15_23ge3"]
-[ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="16_yl31f"]
-[ext_resource type="PackedScene" uid="uid://b8p46pw86uqfc" path="res://scenes/ui/card_pile_opener.tscn" id="17_wcq8l"]
-[ext_resource type="Texture2D" uid="uid://y2kvosta1bos" path="res://art/tutorial/discard.png" id="18_6g36x"]
-[ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="19_g5j53"]
-[ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="20_g4djd"]
-[ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="21_nxkfo"]
-[ext_resource type="PackedScene" uid="uid://cu7snvcm8ig0c" path="res://scenes/ui/card_pile_view.tscn" id="22_pd2nf"]
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_a7puj"]
+[ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="2_qkv1n"]
+[ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_gk33u"]
+[ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_3tdsx"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="5_r33ud"]
+[ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="6_1gp6g"]
+[ext_resource type="Resource" uid="uid://ccn8l8md8lt2d" path="res://enemies/crab/crab_enemy.tres" id="7_lmiek"]
+[ext_resource type="PackedScene" uid="uid://efmvom1i6akt" path="res://scenes/player/player.tscn" id="8_gqrf5"]
+[ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="9_yf2uv"]
+[ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="10_yxchk"]
+[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="11_busnu"]
+[ext_resource type="PackedScene" uid="uid://bq66dpoe1yij" path="res://scenes/battle/timer.tscn" id="12_mgsui"]
+[ext_resource type="Script" path="res://scenes/ui/hand.gd" id="13_0lhpr"]
+[ext_resource type="PackedScene" uid="uid://c5rs2totlrygb" path="res://scenes/ui/mana_ui.tscn" id="14_cwbio"]
+[ext_resource type="PackedScene" uid="uid://ggogqm7l4e71" path="res://scenes/ui/tooltip.tscn" id="15_ebwp3"]
+[ext_resource type="Theme" uid="uid://b6qthuai1qntb" path="res://art/themes/MinimalUI/MinimalUI.tres" id="16_wbr88"]
+[ext_resource type="PackedScene" uid="uid://b8p46pw86uqfc" path="res://scenes/ui/card_pile_opener.tscn" id="17_plf2i"]
+[ext_resource type="Texture2D" uid="uid://y2kvosta1bos" path="res://art/tutorial/discard.png" id="18_wt3gv"]
+[ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="19_lsrnn"]
+[ext_resource type="PackedScene" uid="uid://dunflvpiv5odo" path="res://scenes/ui/finBatalla.tscn" id="20_pc2pt"]
+[ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="21_8tuvr"]
+[ext_resource type="PackedScene" uid="uid://cu7snvcm8ig0c" path="res://scenes/ui/card_pile_view.tscn" id="22_n52by"]
+[ext_resource type="PackedScene" uid="uid://2whd3h13vgtp" path="res://scenes/battle_reward/battle_reward.tscn" id="23_jakjg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2sggn"]
 resource_local_to_scene = true
-shader = ExtResource("3_ngoul")
+shader = ExtResource("3_gk33u")
 shader_parameter/speed = 1.0
 shader_parameter/distortionAmount = 0.1
 
@@ -33,14 +34,14 @@ shader_parameter/distortionAmount = 0.1
 size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D"]
-script = ExtResource("1_8rvo4")
-char_stats = ExtResource("2_4xwio")
+script = ExtResource("1_a7puj")
+char_stats = ExtResource("2_qkv1n")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2sggn")
 scale = Vector2(0.568889, 0.345324)
-texture = ExtResource("4_886bq")
+texture = ExtResource("4_3tdsx")
 centered = false
 flip_h = true
 
@@ -52,20 +53,20 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_qrmle")
 
 [node name="EnemyHandler" type="Node2D" parent="."]
-script = ExtResource("5_bsvls")
+script = ExtResource("5_r33ud")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("6_q601l")]
+[node name="Enemy" parent="EnemyHandler" instance=ExtResource("6_1gp6g")]
 position = Vector2(205, 76)
 collision_layer = 2
-stats = ExtResource("7_cjqa2")
+stats = ExtResource("7_lmiek")
 
-[node name="Player" parent="." instance=ExtResource("8_wymgq")]
+[node name="Player" parent="." instance=ExtResource("8_gqrf5")]
 position = Vector2(40, 73)
 
-[node name="CardTargetSelector" parent="." instance=ExtResource("9_ynt0u")]
+[node name="CardTargetSelector" parent="." instance=ExtResource("9_yf2uv")]
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
-script = ExtResource("10_4ge2e")
+script = ExtResource("10_yxchk")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="TimerReal" type="Timer" parent="."]
@@ -73,9 +74,9 @@ wait_time = 40.0
 one_shot = true
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
-script = ExtResource("11_f5kv7")
+script = ExtResource("11_busnu")
 
-[node name="Timer" parent="BattleUI" instance=ExtResource("12_g44rn")]
+[node name="Timer" parent="BattleUI" instance=ExtResource("12_mgsui")]
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 22.0
@@ -94,16 +95,16 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
-script = ExtResource("13_04sak")
+script = ExtResource("13_0lhpr")
 
-[node name="ManaUI" parent="BattleUI" instance=ExtResource("14_8k5cm")]
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("14_cwbio")]
 offset_left = 17.0
 offset_top = -43.0
 offset_right = 35.0
 offset_bottom = -25.0
-char_stats = ExtResource("2_4xwio")
+char_stats = ExtResource("2_qkv1n")
 
-[node name="Tooltip" parent="BattleUI" instance=ExtResource("15_23ge3")]
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("15_ebwp3")]
 offset_top = 6.0
 offset_bottom = 42.0
 
@@ -120,11 +121,11 @@ offset_right = -15.0
 offset_bottom = -27.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("16_yl31f")
+theme = ExtResource("16_wbr88")
 text = "End
 "
 
-[node name="DrawPile" parent="BattleUI" node_paths=PackedStringArray("contador") instance=ExtResource("17_wcq8l")]
+[node name="DrawPile" parent="BattleUI" node_paths=PackedStringArray("contador") instance=ExtResource("17_plf2i")]
 offset_left = 4.0
 offset_top = 124.0
 offset_right = 20.0
@@ -140,12 +141,12 @@ offset_bottom = 20.0
 theme_override_font_sizes/font_size = 9
 text = "99"
 
-[node name="DiscardPile" parent="BattleUI" node_paths=PackedStringArray("contador") instance=ExtResource("17_wcq8l")]
+[node name="DiscardPile" parent="BattleUI" node_paths=PackedStringArray("contador") instance=ExtResource("17_plf2i")]
 offset_left = 236.0
 offset_top = 123.0
 offset_right = 252.0
 offset_bottom = 139.0
-texture_normal = ExtResource("18_6g36x")
+texture_normal = ExtResource("18_wt3gv")
 contador = NodePath("DiscardButton")
 
 [node name="DiscardButton" type="Label" parent="BattleUI/DiscardPile"]
@@ -159,7 +160,7 @@ text = "99"
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
-script = ExtResource("19_g5j53")
+script = ExtResource("19_lsrnn")
 
 [node name="ColorRect" type="ColorRect" parent="RedFlash"]
 anchors_preset = 15
@@ -176,23 +177,28 @@ one_shot = true
 
 [node name="FinBatallaLayer" type="CanvasLayer" parent="."]
 
-[node name="finBatalla" parent="FinBatallaLayer" instance=ExtResource("20_g4djd")]
+[node name="FinBatalla" parent="FinBatallaLayer" instance=ExtResource("20_pc2pt")]
 visible = false
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("21_nxkfo")]
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("21_8tuvr")]
 visible = false
 
 [node name="CardPileView" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="DrawPileView" parent="CardPileView" instance=ExtResource("22_pd2nf")]
+[node name="DrawPileView" parent="CardPileView" instance=ExtResource("22_n52by")]
 unique_name_in_owner = true
 visible = false
 
-[node name="DiscardPileView" parent="CardPileView" instance=ExtResource("22_pd2nf")]
+[node name="DiscardPileView" parent="CardPileView" instance=ExtResource("22_n52by")]
 unique_name_in_owner = true
+visible = false
+
+[node name="Rewards" type="CanvasLayer" parent="."]
+
+[node name="BattleReward" parent="Rewards" instance=ExtResource("23_jakjg")]
 visible = false
 
 [connection signal="timeout" from="TimerReal" to="." method="_on_timer_timeout"]
