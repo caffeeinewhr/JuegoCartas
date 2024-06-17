@@ -10,40 +10,35 @@ extends Control
 
 func _ready():
 	AudioPlayer.play_music(preload("res://art/music/mapa.wav"))
-	setupData()
-	setupLevels()
+	setup_data()
+	setup_levels()
 	
-func setupData():
+func setup_data():
 	if GlobalData.username.is_empty():
 		data_username.hide()
 	else:
 		data_username.label.text = "Username: " + GlobalData.username
 		
-	data_time_left.label.text = "Time left: " + str(GlobalData.time_left)
+	data_time_left.label.text = "Time left: " + str(int(GlobalData.time_left)) + " seconds"
 	data_kills.label.text = "Kills: " + str(GlobalData.kills)
 	data_deaths.label.text = "Deaths: " + str(GlobalData.deaths)
 		
-func setupLevels():
-	var numLevels = levels.size()
-	for i in range(numLevels):
+func setup_levels():
+	var num_levels = levels.size()
+	for i in range(num_levels):
 		var lvl = levels[i]
 		lvl.number = i + 1
 		lvl.label.text = "Level " + str(i + 1)
-		lvl.battleScene = "res://scenes/battle/battle_" + str(i + 1) + ".tscn"
+		lvl.battle_scene = "res://scenes/battle/battle_" + str(i + 1) + ".tscn"
 		
-		if i == 0:
-			lvl.isFirstLevel = true
-			lvl.isPlayable = true
-		elif lvl.number in GlobalData.completed_levels and i < numLevels:
-			var next_lvl = levels[i + 1]
-			lvl.isCompleted = true
-			lvl.isPlayable = true
-			next_lvl.isPlayable = true
+		if i == 0 or (i > 0 and levels[i - 1].number in GlobalData.completed_levels):
+			lvl.is_playable = true
+			lvl.button.disabled = false
 		else:
+			lvl.is_playable = false
 			lvl.button.disabled = true
-			lvl.isPlayable = false
 			
-		if i < (numLevels - 1):
+		if i < (num_levels - 1):
 			var line = Line2D.new()
 			line.points = [lvl.position, levels[i + 1].position]
 			line.width = lineWidth

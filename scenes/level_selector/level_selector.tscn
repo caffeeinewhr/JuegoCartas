@@ -77,8 +77,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 69.0
-offset_right = -184.0
+offset_left = 85.0
+offset_right = -168.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_2rgxm")
@@ -89,7 +89,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -187.0
+offset_right = -171.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -100,7 +100,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 72.0
+offset_left = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -198,15 +198,15 @@ offset_bottom = 104.0
 [node name="LevelsLayer" type="CanvasLayer" parent="."]
 
 [node name="Level1" parent="LevelsLayer" instance=ExtResource("2_aog86")]
-offset_left = -32.0
+offset_left = -19.0
 offset_top = -27.0
-offset_right = -32.0
+offset_right = -19.0
 offset_bottom = -27.0
 
 [node name="Level2" parent="LevelsLayer" instance=ExtResource("2_aog86")]
-offset_left = -32.0
+offset_left = -19.0
 offset_top = 32.0
-offset_right = -32.0
+offset_right = -19.0
 offset_bottom = 32.0
 
 [node name="Level3" parent="LevelsLayer" instance=ExtResource("2_aog86")]
@@ -226,7 +226,6 @@ offset_left = 88.0
 offset_top = -16.0
 offset_right = 88.0
 offset_bottom = -16.0
-isBossBattle = true
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 
