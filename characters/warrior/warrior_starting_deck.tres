@@ -1,14 +1,11 @@
-[gd_resource type="Resource" script_class="CardPile" load_steps=9 format=3 uid="uid://b3mfldpfyt4x3"]
+[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://b3mfldpfyt4x3"]
 
 [ext_resource type="Resource" uid="uid://bhsgjlhr8xhye" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="1_e8mil"]
 [ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_n6q6t"]
 [ext_resource type="Resource" uid="uid://byk45wvc2hf4i" path="res://characters/warrior/cards/warrior_block.tres" id="2_yv0qy"]
-[ext_resource type="Resource" uid="uid://djxjqkhohaxcm" path="res://characters/warrior/cards/warrior_time_attack.tres" id="3_ry1et"]
-[ext_resource type="Resource" uid="uid://c3u1b6wroplhq" path="res://characters/warrior/cards/warrior_big_slam.tres" id="4_4tfdl"]
 [ext_resource type="Resource" uid="uid://c102yq6ditij5" path="res://characters/warrior/cards/warrior_sword_attack.tres" id="5_wfovv"]
 [ext_resource type="Resource" uid="uid://6w05eb1wxntt" path="res://characters/warrior/cards/warrior_time_up.tres" id="6_xsjvy"]
-[ext_resource type="Resource" uid="uid://v88loa6td3a8" path="res://characters/warrior/cards/warrior_big_block.tres" id="7_hclaw"]
 
 [resource]
 script = ExtResource("1_n6q6t")
-cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_e8mil"), ExtResource("2_yv0qy"), ExtResource("2_yv0qy"), ExtResource("1_e8mil"), ExtResource("2_yv0qy"), ExtResource("1_e8mil"), ExtResource("3_ry1et"), ExtResource("3_ry1et"), ExtResource("4_4tfdl"), ExtResource("4_4tfdl"), ExtResource("5_wfovv"), ExtResource("5_wfovv"), ExtResource("5_wfovv"), ExtResource("6_xsjvy"), ExtResource("6_xsjvy"), ExtResource("7_hclaw")])
+cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("2_yv0qy"), ExtResource("2_yv0qy"), ExtResource("2_yv0qy"), ExtResource("2_yv0qy"), ExtResource("1_e8mil"), ExtResource("1_e8mil"), ExtResource("5_wfovv"), ExtResource("5_wfovv"), ExtResource("5_wfovv"), ExtResource("5_wfovv"), ExtResource("6_xsjvy"), ExtResource("6_xsjvy"), ExtResource("6_xsjvy")])

@@ -11,4 +11,4 @@ rarity = 0
 target = 0
 cost = 2
 icon = ExtResource("1_3frpy")
-tooltip_text = "[center]Grants [color=blue]4[/color] shield[/center]"
+tooltip_text = "[center]Grants [color=blue]5[/color] shield[/center]"

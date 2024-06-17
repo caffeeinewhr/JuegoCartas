@@ -11,4 +11,4 @@ rarity = 1
 target = 2
 cost = 1
 icon = ExtResource("1_pgsf7")
-tooltip_text = "[center]Deals [color=red]3[/color] damage[/center]"
+tooltip_text = "[center]Deals [color=red]5[/color] damage[/center]"
