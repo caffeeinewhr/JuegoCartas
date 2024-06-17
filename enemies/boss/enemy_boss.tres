@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://d1idcjpq3bevo" path="res://enemies/boss/boss_enemy_ia.tscn" id="1_5kfsh"]
 [ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_wigmf"]
-[ext_resource type="Texture2D" uid="uid://b8bq77uq4fif2" path="res://art/tutorial/tile_0124.png" id="2_65x23"]
+[ext_resource type="Texture2D" uid="uid://ckif5on4jxdl4" path="res://art/EnemySprites/tile009.png" id="2_35wv8"]
 
 [resource]
 script = ExtResource("1_wigmf")
 ai = ExtResource("1_5kfsh")
-max_health = 35
-art = ExtResource("2_65x23")
+max_health = 40
+art = ExtResource("2_35wv8")
