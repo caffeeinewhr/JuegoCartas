@@ -6,6 +6,7 @@ extends Control
 @onready var label_welcome = $AnimatedBackground/LabelWelcome
 
 func _ready():
+	GlobalData.username = "Offline"
 	AudioPlayer.play_music(preload("res://art/music/demo_menu.wav"))
 	Api.connect("user_validation_completed", Callable(self, "_on_user_validation_completed"))
 	Api.connect("user_stats_retrieved", Callable(self, "_on_user_stats_retrieved"))
@@ -46,7 +47,7 @@ func _on_user_validation_completed(success: bool):
 		label_error.text = "User does not exist"
 		label_error.show()
 	else:
-		label_welcome.text = "Welcome " + GlobalData.username + "!"
+		label_welcome.text = "Welcome " + GlobalData.username
 		$Form.hide()
 		print("User validated successfully (on main.tscn)")
 		Api.get_user_stats(GlobalData.username)

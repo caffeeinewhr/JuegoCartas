@@ -14,7 +14,7 @@ func _ready():
 	setup_levels()
 	
 func setup_data():
-	if GlobalData.username.is_empty():
+	if GlobalData.username.is_empty() or GlobalData.username == "Offline":
 		data_username.hide()
 	else:
 		data_username.label.text = "Username: " + GlobalData.username
