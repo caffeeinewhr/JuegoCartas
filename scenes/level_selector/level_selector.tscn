@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c7r8gs68656vi" path="res://scenes/pause_menu/pause_menu.tscn" id="4_eo1go"]
 [ext_resource type="Texture2D" uid="uid://bd0jskfcuvdwo" path="res://art/backgrounds/cat2.png" id="4_v7ib8"]
 [ext_resource type="FontFile" uid="uid://ddm3m57t31rfs" path="res://art/fonts/JMH Typewriter.otf" id="5_rrqda"]
+[ext_resource type="Texture2D" uid="uid://c8i5rynpq2dlf" path="res://art/EnemySprites/tile014.png" id="6_dv34s"]
 [ext_resource type="PackedScene" uid="uid://2x1gxnne0f7t" path="res://scenes/level_selector/data.tscn" id="6_j78q0"]
-[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tutorial/tile_0087.png" id="6_pxl42"]
 
 [sub_resource type="Shader" id="Shader_xyoir"]
 code = "shader_type canvas_item;
@@ -167,9 +167,10 @@ expand_mode = 3
 [node name="UserStatsLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="UserStatsLayer"]
-position = Vector2(24, 24)
-scale = Vector2(2, 2)
-texture = ExtResource("6_pxl42")
+position = Vector2(24, 28)
+scale = Vector2(1.125, 1.1875)
+texture = ExtResource("6_dv34s")
+flip_h = true
 
 [node name="dataUsername" parent="UserStatsLayer" instance=ExtResource("6_j78q0")]
 offset_left = 7.0

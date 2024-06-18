@@ -11,7 +11,8 @@ stats = ExtResource("2_cnpyn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xyyey")
+flip_h = true
 
 [node name="StatsUI" parent="." instance=ExtResource("2_r3evu")]
-offset_top = 7.0
-offset_bottom = 23.0
+offset_top = 13.0
+offset_bottom = 29.0
