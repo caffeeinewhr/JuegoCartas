@@ -1,6 +1,6 @@
+res://art/EnemySprites
 res://art/backgrounds
 res://scenes/battle_reward
-res://art/EnemySprites
 res://enemies/boss
 res://art/tutorial
 res://characters/warrior/cards
@@ -18,5 +18,4 @@ res://global
 res://global/transition
 res://scenes
 res://scenes/enemy
-res://enemies/crab
 res://art

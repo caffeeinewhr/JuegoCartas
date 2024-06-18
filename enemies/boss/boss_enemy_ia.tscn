@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_g42fn"]
 script = ExtResource("4_vhhh0")
-number = "8"
+number = "7"
 icon = ExtResource("3_0h88s")
 
 [sub_resource type="Resource" id="Resource_nljnt"]

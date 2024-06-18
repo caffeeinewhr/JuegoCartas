@@ -10,12 +10,12 @@
 
 [sub_resource type="Resource" id="Resource_rsbt8"]
 script = ExtResource("4_y3jk6")
-number = "6"
+number = "3"
 icon = ExtResource("3_tbv1h")
 
 [sub_resource type="Resource" id="Resource_alxpr"]
 script = ExtResource("4_y3jk6")
-number = ""
+number = "3"
 icon = ExtResource("6_j01cn")
 
 [sub_resource type="Resource" id="Resource_myixp"]

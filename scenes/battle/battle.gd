@@ -52,6 +52,8 @@ func start_battle(stats: CharacterStats) -> void:
 
 func _on_enemies_child_order_changed() -> void:
 	if is_battle_active and enemy_handler.get_child_count() == 0:
+		if is_instance_valid(battle_ui):
+			battle_ui.hide()
 		print("All enemies defeated")
 		GlobalData.increase_kills(1)
 		GlobalData.complete_level()
@@ -63,46 +65,50 @@ func _on_enemy_turn_ended() -> void:
 
 func _on_player_died() -> void:
 	if is_battle_active:
+		battle_ui.hide()
 		print("Player died")
 		GlobalData.increase_deaths(1)
+		cleanup_battle()
+		GlobalData.set_time_left(41.0)
 		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
 
 func _on_timer_timeout():
 	if is_timer_started:
+		battle_ui.hide()
 		print("Timer timeout")
 		GlobalData.increase_deaths(1)
+		cleanup_battle()
+		GlobalData.set_time_left(41.0)
 		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
 
-func _on_fin_batalla_request(result: String, type: int):
-	print("Battle finished with result: ", result)
-	is_battle_active = false  # Set battle active to false when battle ends
-	hide_current_scene()
-	Api.update_user_stats()
-	if type == FinBatalla.Type.WIN:
-		show_battle_reward()
-	else:
-		show_fin_batalla(result)
+func _on_fin_batalla_request(won: bool) -> void:
+	is_battle_active = false
+	Events.emit_signal("battle_ended", won)
+	get_tree().paused = true
+	if is_instance_valid($BattleUI):
+		$BattleUI.hide()
+	SceneTransition.load_scene("res://scenes/ui/finBatalla.tscn")
 
 func hide_current_scene():
 	print("Hiding current scene")
-	self.hide()
+	if is_instance_valid(self):
+		self.hide()
 
-func show_battle_reward():
-	if is_instance_valid(rewards_layer):
-		print("Showing battle reward")
-		rewards_layer.show()
-		if is_instance_valid(battle_rewards):
-			battle_rewards.visible = true
-
-func show_fin_batalla(result: String): 
-	if is_instance_valid(rewards_layer):
-		print("Showing fin batalla scene with result: ", result)
-		rewards_layer.show()
-		if is_instance_valid(battle_rewards):
-			battle_rewards.visible = false
-		var fin_batalla_scene = preload("res://scenes/battle_reward/battle_reward.tscn").instantiate()
-		rewards_layer.add_child(fin_batalla_scene)
-		fin_batalla_scene.set_result(result)
+#func show_battle_reward():
+	#if is_instance_valid(rewards_layer):
+		#print("Showing battle reward")
+		#rewards_layer.show()
+		#if is_instance_valid(battle_rewards):
+			#battle_rewards.visible = true
+#
+#func show_fin_batalla(result: String): 
+	#if is_instance_valid(rewards_layer):
+		#print("Showing fin batalla scene with result: ", result)
+		#rewards_layer.show()
+		#if is_instance_valid(battle_rewards):
+			#battle_rewards.visible = false
+		#var fin_batalla_scene = preload("res://scenes/battle_reward/battle_reward.tscn").instantiate()
+		#rewards_layer.add_child(fin_batalla_scene)
 
 func cleanup_battle():
 	print("Cleaning up battle")

@@ -23,4 +23,10 @@ func show_screen(text: String, type: Type) -> void:
 	else:
 		label.text = text
 		continueButton.visible = true
+		continueButton.pressed.connect(on_continue_button_pressed)
 		show()
+
+func on_continue_button_pressed() -> void:
+	GlobalData.reset_data()
+	get_tree().paused = false
+	SceneTransition.load_scene("res://scenes/level_selector/level_selector.tscn")
