@@ -5,7 +5,7 @@ var isPaused: bool = false
 func _ready():
 	if GlobalData.username.is_empty():
 		$VBoxContainer/SaveButton.hide()
-	
+
 func _input(event):
 	if event.is_action_pressed("pause"):
 		$Audio/ExitClick.play()
@@ -40,6 +40,13 @@ func _on_quit_button_pressed():
 func _on_menu_button_pressed():
 	$Audio/ExitClick.play()
 	get_tree().paused = false
+
+	# Get the battle scene node and disconnect the signal
+	var battle_scene_path = "/root/Battle"
+	var battle_scene = get_node(battle_scene_path)
+	if battle_scene:
+		battle_scene.cleanup_battle()
+		
 	SceneTransition.load_scene("res://scenes/main_menu/main_menu.tscn")
 
 func _on_music_button_mouse_entered():
