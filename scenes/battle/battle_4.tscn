@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cx2u42u2clb5k"]
+[gd_scene load_steps=26 format=3 uid="uid://b3eyrba5ggvg7"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_6cdgi"]
 [ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="2_dmayf"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_elvbe"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="5_178le"]
 [ext_resource type="PackedScene" uid="uid://dltwx2fcqxn4x" path="res://scenes/enemy/enemy.tscn" id="6_kclqe"]
-[ext_resource type="Resource" uid="uid://ccn8l8md8lt2d" path="res://enemies/crab/crab_enemy.tres" id="7_ppqrc"]
+[ext_resource type="Resource" uid="uid://b4sy4t8e60oh4" path="res://enemies/other/other_enemy.tres" id="7_avf5v"]
 [ext_resource type="PackedScene" uid="uid://efmvom1i6akt" path="res://scenes/player/player.tscn" id="8_mn8qe"]
 [ext_resource type="PackedScene" uid="uid://i6qtrct78oot" path="res://scenes/card_target_selector/card_target_selector.tscn" id="9_sd2hc"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="10_0pq2x"]
@@ -35,7 +35,6 @@ size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_6cdgi")
-char_stats = ExtResource("2_dmayf")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -58,7 +57,7 @@ script = ExtResource("5_178le")
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("6_kclqe")]
 position = Vector2(205, 76)
 collision_layer = 2
-stats = ExtResource("7_ppqrc")
+stats = ExtResource("7_avf5v")
 
 [node name="Player" parent="." instance=ExtResource("8_mn8qe")]
 position = Vector2(40, 73)

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://custom_resources/accionEnemiga.gd" id="4_vhhh0"]
 [ext_resource type="Script" path="res://enemies/boss/boss_block_action.gd" id="5_6qbbo"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="6_5ja4l"]
-[ext_resource type="Script" path="res://enemies/crab/crab_megablock_action.gd" id="7_ubbkc"]
+[ext_resource type="Script" path="res://enemies/cura/cura_megablock_action.gd" id="7_davos"]
 
 [sub_resource type="Resource" id="Resource_g42fn"]
 script = ExtResource("4_vhhh0")
@@ -39,5 +39,5 @@ type = 1
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="."]
-script = ExtResource("7_ubbkc")
+script = ExtResource("7_davos")
 accion = SubResource("Resource_myixp")

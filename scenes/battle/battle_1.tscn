@@ -8,8 +8,8 @@
 [ext_resource type="Shader" path="res://shaders/bgMenuScroll.gdshader" id="3_wbjuw"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_s5v0x"]
 [ext_resource type="Texture2D" uid="uid://dd2ia5vm4bk2h" path="res://art/backgrounds/Pattern.jpg" id="4_tf8y8"]
-[ext_resource type="Resource" uid="uid://ccn8l8md8lt2d" path="res://enemies/crab/crab_enemy.tres" id="5_jh0qk"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_wlosk"]
+[ext_resource type="Resource" uid="uid://hkhtx26esqp5" path="res://enemies/thief/thief_enemy.tres" id="7_yvcg8"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_cdiat"]
 [ext_resource type="PackedScene" uid="uid://c5rs2totlrygb" path="res://scenes/ui/mana_ui.tscn" id="9_oy47p"]
 [ext_resource type="Resource" uid="uid://q5heikpti188" path="res://characters/warrior/warrior.tres" id="10_ocro2"]
@@ -35,7 +35,6 @@ size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_v23k3")
-char_stats = ExtResource("10_ocro2")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -58,7 +57,7 @@ script = ExtResource("4_s5v0x")
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_v1hmm")]
 position = Vector2(205, 76)
 collision_layer = 2
-stats = ExtResource("5_jh0qk")
+stats = ExtResource("7_yvcg8")
 
 [node name="Player" parent="." instance=ExtResource("3_mmqxs")]
 position = Vector2(40, 73)

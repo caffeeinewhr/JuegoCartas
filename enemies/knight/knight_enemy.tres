@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://ddcs750y32chi"]
+
+[ext_resource type="PackedScene" uid="uid://d1idcjpq3bevo" path="res://enemies/boss/boss_enemy_ia.tscn" id="1_8e0oc"]
+[ext_resource type="Texture2D" uid="uid://ciol3l0qgomwa" path="res://art/EnemySprites/tile005.png" id="2_28b6a"]
+[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="3_88xh4"]
+
+[resource]
+script = ExtResource("3_88xh4")
+ai = ExtResource("1_8e0oc")
+max_health = 20
+art = ExtResource("2_28b6a")

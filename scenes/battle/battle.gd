@@ -1,6 +1,7 @@
+# scenes/battle.gd
 extends Node2D
 
-@export var char_stats: CharacterStats
+#@export var char_stats: CharacterStats
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
@@ -9,10 +10,11 @@ extends Node2D
 @onready var timer_real: Timer = $TimerReal
 @onready var timer_ui: TimerUI = $BattleUI/Timer
 @onready var rewards_layer: CanvasLayer = $Rewards
-@onready var battle_rewards: Node = rewards_layer.get_node("BattleReward")
+@onready var battle_rewards: Node = $Rewards/BattleReward
 
+var char_stats = preload("res://custom_resources/character_stats.gd")
 var is_timer_started: bool = false
-var is_battle_active: bool = true  # New flag to indicate if the battle is active
+var is_battle_active: bool = true
 
 func _ready() -> void:
 	print("Battle started")
@@ -21,10 +23,19 @@ func _ready() -> void:
 	timer_real.wait_time = GlobalData.time_left
 	timer_real.start()
 	is_timer_started = true
-	var new_stats: CharacterStats = char_stats.create_instance()
+	
+	var global_stats = Global.get_player_stats()
+	if global_stats == null:
+		var char_stats_instance = char_stats.new()
+		global_stats = char_stats_instance.create_instance()
+		Global.save_player_stats(global_stats)
+
+	var new_stats: CharacterStats = global_stats.duplicate()
+	
+	#var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
-
+	
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	Events.player_turn_ended.connect(player_handler.end_turn)
@@ -46,7 +57,7 @@ func _process(_delta):
 		timer_ui.update_label(GlobalData.time_left)
 
 func start_battle(stats: CharacterStats) -> void:
-	is_battle_active = true  # Ensure battle is active at the start
+	is_battle_active = true
 	enemy_handler.reset_enemy_actions()
 	player_handler.start_battle(stats)
 
@@ -75,11 +86,13 @@ func _on_timer_timeout():
 
 func _on_fin_batalla_request(result: String, type: int):
 	print("Battle finished with result: ", result)
-	is_battle_active = false  # Set battle active to false when battle ends
+	is_battle_active = false
 	hide_current_scene()
 	if type == FinBatalla.Type.WIN:
+		print("type WIN")
 		show_battle_reward()
 	else:
+		print("type DERROTA")
 		show_fin_batalla(result)
 
 func hide_current_scene():
@@ -98,10 +111,10 @@ func show_fin_batalla(result: String):
 		print("Showing fin batalla scene with result: ", result)
 		rewards_layer.show()
 		if is_instance_valid(battle_rewards):
+			print("instance valid battle rewards")
 			battle_rewards.visible = false
 		var fin_batalla_scene = preload("res://scenes/battle_reward/battle_reward.tscn").instantiate()
 		rewards_layer.add_child(fin_batalla_scene)
-		fin_batalla_scene.set_result(result)
 
 func cleanup_battle():
 	print("Cleaning up battle")
