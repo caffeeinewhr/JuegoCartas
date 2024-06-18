@@ -77,6 +77,7 @@ func _on_fin_batalla_request(result: String, type: int):
 	print("Battle finished with result: ", result)
 	is_battle_active = false  # Set battle active to false when battle ends
 	hide_current_scene()
+	Api.update_user_stats()
 	if type == FinBatalla.Type.WIN:
 		show_battle_reward()
 	else:
