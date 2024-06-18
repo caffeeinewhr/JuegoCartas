@@ -12,7 +12,7 @@ extends Node2D
 @onready var battle_rewards: Node = rewards_layer.get_node("BattleReward")
 
 var is_timer_started: bool = false
-var is_battle_active: bool = true  # New flag to indicate if the battle is active
+var is_battle_active: bool = true
 
 func _ready() -> void:
 	print("Battle started")

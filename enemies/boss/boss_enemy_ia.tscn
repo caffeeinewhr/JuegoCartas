@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://custom_resources/accionEnemiga.gd" id="4_vhhh0"]
 [ext_resource type="Script" path="res://enemies/boss/boss_block_action.gd" id="5_6qbbo"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="6_5ja4l"]
-[ext_resource type="Script" path="res://enemies/crab/crab_megablock_action.gd" id="7_ubbkc"]
 
 [sub_resource type="Resource" id="Resource_g42fn"]
 script = ExtResource("4_vhhh0")
@@ -17,6 +16,39 @@ icon = ExtResource("3_0h88s")
 script = ExtResource("4_vhhh0")
 number = "8"
 icon = ExtResource("6_5ja4l")
+
+[sub_resource type="GDScript" id="GDScript_h8h4v"]
+script/source = "extends EnemyAction
+
+@export var block := 15
+@export var hp_limite := 6
+
+var usado := false
+
+
+func is_performable() -> bool:
+	if not enemy or not usado:
+		return false
+		
+	var vida_baja := enemy.stats.health <= hp_limite
+	usado = vida_baja
+	
+	return vida_baja
+
+func perform_action() -> void:
+	if not enemy or not target:
+		return
+		
+	var block_effect := BlockEffect.new()
+	block_effect.amount = block
+	block_effect.execute([enemy])
+	
+	get_tree().create_timer(0.6, false).timeout.connect(
+		func():
+			Events.accion_enemiga.emit(enemy)
+	)
+
+"
 
 [sub_resource type="Resource" id="Resource_myixp"]
 script = ExtResource("4_vhhh0")
@@ -39,5 +71,5 @@ type = 1
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="."]
-script = ExtResource("7_ubbkc")
+script = SubResource("GDScript_h8h4v")
 accion = SubResource("Resource_myixp")

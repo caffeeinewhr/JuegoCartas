@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyv8us4wdcggu"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_w7pkg"]
+[ext_resource type="Script" path="res://enemies/cura/cura_attack_action.gd" id="2_rajka"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tutorial/tile_0103.png" id="3_sgo4e"]
+[ext_resource type="Script" path="res://custom_resources/accionEnemiga.gd" id="4_igow3"]
+[ext_resource type="Script" path="res://enemies/cura/cura_block_action.gd" id="5_ufev5"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tutorial/tile_0102.png" id="6_4ww8k"]
+[ext_resource type="Script" path="res://enemies/cura/cura_megablock_action.gd" id="7_fpodb"]
+
+[sub_resource type="Resource" id="Resource_rsbt8"]
+script = ExtResource("4_igow3")
+number = "6"
+icon = ExtResource("3_sgo4e")
+
+[sub_resource type="Resource" id="Resource_alxpr"]
+script = ExtResource("4_igow3")
+number = ""
+icon = ExtResource("6_4ww8k")
+
+[sub_resource type="Resource" id="Resource_myixp"]
+script = ExtResource("4_igow3")
+number = ""
+icon = ExtResource("6_4ww8k")
+
+[node name="CrabEnemyIA" type="Node"]
+script = ExtResource("1_w7pkg")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_rajka")
+accion = SubResource("Resource_rsbt8")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("5_ufev5")
+accion = SubResource("Resource_alxpr")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("7_fpodb")
+accion = SubResource("Resource_myixp")
