@@ -11,4 +11,4 @@ rarity = 2
 target = 2
 cost = 2
 icon = ExtResource("1_f2w45")
-tooltip_text = "[center]Deals [color=red]2[/color] damage[/center] and grants [color=yellow]5[/color] seconds "
+tooltip_text = "[center]Deals [color=red]2[/color] damage and grants [color=yellow]5[/color] seconds[/center]"

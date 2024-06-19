@@ -1,6 +1,6 @@
 extends HTTPRequest
 
-const BASE_URL := "http://127.0.0.1:8000/api/"
+const BASE_URL := "https://webgato.onrender.com/api/"
 
 var validating_username: String
 var request_queue = []
@@ -42,7 +42,8 @@ func validate_user(username: String, password: String):
 		"username": username,
 		"password": password
 	}
-	make_request("user_exists/", HTTPClient.METHOD_GET, json_data)
+	# Changed METHOD_GET to METHOD_POST to allow body in the request
+	make_request("user_exists/", HTTPClient.METHOD_POST, json_data)
 
 func update_user_stats():
 	print("Request update")
@@ -62,7 +63,8 @@ func get_user_stats(username: String):
 	var json_data = {
 		"username": username
 	}
-	make_request("get_user_stats/", HTTPClient.METHOD_GET, json_data)
+	# Changed METHOD_GET to METHOD_POST to allow body in the request
+	make_request("get_user_stats/", HTTPClient.METHOD_POST, json_data)
 
 func _on_request_completed(result, response_code, _headers, body):
 	is_requesting = false

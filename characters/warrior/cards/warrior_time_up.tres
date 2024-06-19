@@ -11,4 +11,4 @@ rarity = 0
 target = 2
 cost = 1
 icon = ExtResource("1_4lnc7")
-tooltip_text = "Grants [color=yellow]5[/color] seconds "
+tooltip_text = "[center]Grants [color=yellow]5[/color] seconds [/center]"

@@ -8,7 +8,7 @@ var completed_levels: Array[int] = []
 var current_level: int = 1
 var kills: int = 0
 var deaths: int = 0
-var time_left: float = 40.0
+var time_left: float = 90.0
 var timer_real: Timer = null
 
 const BASE_CARD_REWARDS := 3
@@ -83,7 +83,7 @@ func reset_data() -> void:
 	playtime = 0
 	kills = 0
 	deaths = 0
-	time_left = 40.0
+	time_left = 90.0
 	completed_levels.clear()
 	if is_instance_valid(timer_real):
 		timer_real.wait_time = 0

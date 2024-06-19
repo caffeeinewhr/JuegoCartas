@@ -57,7 +57,7 @@ func _on_enemies_child_order_changed() -> void:
 		print("All enemies defeated")
 		GlobalData.increase_kills(1)
 		GlobalData.complete_level()
-		Events.fin_batalla_request.emit("Victoria!!", FinBatalla.Type.WIN)
+		Events.fin_batalla_request.emit("Victory!!", FinBatalla.Type.WIN)
 
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
@@ -69,8 +69,8 @@ func _on_player_died() -> void:
 		print("Player died")
 		GlobalData.increase_deaths(1)
 		cleanup_battle()
-		GlobalData.set_time_left(41.0)
-		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
+		GlobalData.set_time_left(91.0)
+		Events.fin_batalla_request.emit("Defeat", FinBatalla.Type.LOSE)
 
 func _on_timer_timeout():
 	if is_timer_started:
@@ -78,8 +78,8 @@ func _on_timer_timeout():
 		print("Timer timeout")
 		GlobalData.increase_deaths(1)
 		cleanup_battle()
-		GlobalData.set_time_left(41.0)
-		Events.fin_batalla_request.emit("Derrota", FinBatalla.Type.LOSE)
+		GlobalData.set_time_left(91.0)
+		Events.fin_batalla_request.emit("Defeat", FinBatalla.Type.LOSE)
 
 func _on_fin_batalla_request(won: bool) -> void:
 	is_battle_active = false
@@ -93,22 +93,6 @@ func hide_current_scene():
 	print("Hiding current scene")
 	if is_instance_valid(self):
 		self.hide()
-
-#func show_battle_reward():
-	#if is_instance_valid(rewards_layer):
-		#print("Showing battle reward")
-		#rewards_layer.show()
-		#if is_instance_valid(battle_rewards):
-			#battle_rewards.visible = true
-#
-#func show_fin_batalla(result: String): 
-	#if is_instance_valid(rewards_layer):
-		#print("Showing fin batalla scene with result: ", result)
-		#rewards_layer.show()
-		#if is_instance_valid(battle_rewards):
-			#battle_rewards.visible = false
-		#var fin_batalla_scene = preload("res://scenes/battle_reward/battle_reward.tscn").instantiate()
-		#rewards_layer.add_child(fin_batalla_scene)
 
 func cleanup_battle():
 	print("Cleaning up battle")

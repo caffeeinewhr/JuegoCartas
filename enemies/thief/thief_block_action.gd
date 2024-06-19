@@ -19,7 +19,6 @@ func perform_action() -> void:
 	tween.tween_interval(0.15)
 	tween.tween_property(enemy, "scale", tamanio_original, 0.2)
 	
-	
 	tween.finished.connect(
 		func():
 			Events.accion_enemiga.emit(enemy)
